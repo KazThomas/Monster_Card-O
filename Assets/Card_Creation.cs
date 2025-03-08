@@ -6,16 +6,17 @@ using UnityEngine.UI;
 public class Card_Creation : MonoBehaviour
 {
     [SerializeField] private float speed = 0.06f;
-    [SerializeField] private Image icon;
     private Vector3 mousePos;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    private bool spawn = false;
 
     // Update is called once per frame
     void Update()
     {
+        if (!spawn)
+        {
+            transform.position = mousePos;
+            spawn = true;
+        }
         if (Input.GetMouseButton(0))
         {
             mousePos = Input.mousePosition;

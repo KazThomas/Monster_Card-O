@@ -6,7 +6,6 @@ public class WheelSpin : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxSpeed = 120f;
-    [SerializeField] private float increase = 4f;
     [SerializeField] private float angle;
     [SerializeField] private GameObject hand;
     private float timer3 = 0f;
@@ -46,6 +45,10 @@ public class WheelSpin : MonoBehaviour
         {
             BigSpin();
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+
+        }
 
         if (!stop) 
         {
@@ -56,21 +59,19 @@ public class WheelSpin : MonoBehaviour
 
     void BigSpin()
     {
-        timer3 = 0;
-        if (timer3 >= 3f && timer3 <= 4f)
-        {
-            speed += increase;
-        }
+        float stopWatch = 0.0f;
 
-        if (timer3 > 5f)
-        {
-            speed -= increase;
-            if (speed <= 0f)
-            {
-                speed = 0f;
-                rotZ = Vector3.zero;
-            }
-        }
+        stopWatch += Time.deltaTime;
+        Debug.Log(stopWatch);
+
+        float sUp = 1.4f;
+        speed *= sUp;
+
+        
+
+
+
+        ZoneCheck();
     }
 
 
