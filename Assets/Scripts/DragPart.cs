@@ -2,27 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragPart : MonoBehaviour
 {
-    private SpriteRenderer sr;
+    private Image img;
+    private BoxCollider2D box;
     [SerializeField] private GameObject part;
 
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        img = GetComponent<Image>();
+        box = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        
+      
     }
 
     public void CreatePart()
     {
         Debug.Log("Test");
-        part.GetComponent<SpriteRenderer>().sprite = sr.sprite;
-        Instantiate(part);
+
+        part.SetActive(true);
         part.transform.position = Input.mousePosition;
-    }    
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
 }
