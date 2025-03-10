@@ -10,11 +10,31 @@ public class Scroll : MonoBehaviour
     private Scrollbar roll;
     private float rollPos;
     [SerializeField] private float yPos = 3f;
+    [SerializeField] private float mouseWheel = 30f;
     private void Start()
     {
         roll = GetComponent<Scrollbar>();
         rollPos = roll.value;
     }
+
+    private void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 )
+        {
+            Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+            Transform rect = icons.GetComponent<RectTransform>();
+            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel, 0);
+            rollPos = roll.value;
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            Transform rect = icons.GetComponent<RectTransform>();
+            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel, 0);
+            rollPos = roll.value;
+        }
+    }
+
     public void OnMouseDrag()
     {
         Debug.Log("test");

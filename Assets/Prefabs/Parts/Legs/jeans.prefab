@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2864787625601671390}
   - component: {fileID: 1834030792500993032}
   - component: {fileID: 5757638214401662593}
+  - component: {fileID: -6327115411024079796}
   m_Layer: 0
   m_Name: jeans
-  m_TagString: Untagged
+  m_TagString: Part
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.06
+--- !u!114 &-6327115411024079796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584265292441236675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5fc321f85ab4348a1ae5c495723e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0

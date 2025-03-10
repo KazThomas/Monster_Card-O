@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6984420003349599580}
   - component: {fileID: 927720918059807772}
   - component: {fileID: 8530087971492621749}
+  - component: {fileID: -5359467895794976780}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Part
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.06
+--- !u!114 &-5359467895794976780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368456347904444242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5fc321f85ab4348a1ae5c495723e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0

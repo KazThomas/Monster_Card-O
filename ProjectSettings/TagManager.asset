@@ -8,6 +8,9 @@ TagManager:
   - Atk
   - Shield
   - Monster
+  - Part
+  - Card
+  - Body
   layers:
   - Default
   - TransparentFX

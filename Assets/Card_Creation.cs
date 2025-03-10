@@ -9,6 +9,13 @@ public class Card_Creation : MonoBehaviour
     private Vector3 mousePos;
     private bool spawn = false;
 
+    private CardPlacement place;
+
+    private void Start()
+    {
+        place = GetComponent<CardPlacement>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +24,7 @@ public class Card_Creation : MonoBehaviour
             transform.position = mousePos;
             spawn = true;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && place.hasDropped == false)
         {
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);

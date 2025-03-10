@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6894348392095952765}
   - component: {fileID: 2047167840308129672}
   - component: {fileID: 6854188867422709036}
+  - component: {fileID: -4740521253133032709}
   m_Layer: 0
   m_Name: Lash
-  m_TagString: Untagged
+  m_TagString: Part
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.06
+--- !u!114 &-4740521253133032709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709696776501421975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5fc321f85ab4348a1ae5c495723e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0

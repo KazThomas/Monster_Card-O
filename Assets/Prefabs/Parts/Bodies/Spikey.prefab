@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4546464364844893967}
   - component: {fileID: 5927065872898158436}
   - component: {fileID: 6287149463537840632}
+  - component: {fileID: -7588226708560059907}
   m_Layer: 0
   m_Name: Spikey
   m_TagString: Body
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.06
+--- !u!114 &-7588226708560059907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933897552231376950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5fc321f85ab4348a1ae5c495723e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0
