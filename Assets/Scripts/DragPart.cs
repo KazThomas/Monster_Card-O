@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class DragPart : MonoBehaviour
 {
-    [SerializeField] private GameObject part;
+    public GameObject part;
 
 
-    public void CreatePart()
+    public virtual void CreatePart()
     {
         Debug.Log("Test");
 
