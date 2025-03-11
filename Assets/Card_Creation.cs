@@ -32,22 +32,7 @@ public class Card_Creation : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = Vector2.Lerp(transform.position, mousePos, speed);
 
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            {
-                transform.localScale -= new Vector3(scalar, scalar, scalar);
-            }
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            {
-                transform.localScale += new Vector3(scalar, scalar, scalar);
-            }
-            if (Input.GetKey(KeyCode.Q))
-            {
-                transform.eulerAngles += new Vector3(0, 0, rot) * Time.deltaTime;
-            }
-            if (Input.GetKey(KeyCode.E))
-            {
-                transform.eulerAngles -= new Vector3(0, 0, rot) * Time.deltaTime;
-            }
+            Transformations();
         }
 
         if (Input.GetKey(KeyCode.S) && place.hasDropped == false)
@@ -58,6 +43,26 @@ public class Card_Creation : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && place.hasDropped == false)
         {
             GetComponent<SpriteRenderer>().sortingOrder += 1;
+        }
+    }
+
+    void Transformations()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            transform.localScale -= new Vector3(scalar, scalar, scalar);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            transform.localScale += new Vector3(scalar, scalar, scalar);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.eulerAngles += new Vector3(0, 0, rot) * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.eulerAngles -= new Vector3(0, 0, rot) * Time.deltaTime;
         }
     }
 }
