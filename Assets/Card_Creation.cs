@@ -30,5 +30,15 @@ public class Card_Creation : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = Vector2.Lerp(transform.position, mousePos, speed);
         }
+
+        if (Input.GetKey(KeyCode.S) && place.hasDropped == false)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder -= 1;
+        }
+
+        if (Input.GetKey(KeyCode.W) && place.hasDropped == false)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder += 1;
+        }
     }
 }
