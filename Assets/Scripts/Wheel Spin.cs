@@ -1,29 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WheelSpin : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxSpeed = 120f;
-    [SerializeField] private float angle;
     [SerializeField] private GameObject hand;
-    private float timer3 = 0f;
     private Vector3 rotZ;
     private bool stop = false;
-    private Rigidbody2D rbody;
+    [SerializeField] private bool startWatch = false;
+    private float stopWatch = 0.0f;
     // Start is called before the first frame update
 
     private void FixedUpdate()
     {
-        timer3 += Time.deltaTime;
         rotZ  = new Vector3(0,0, speed * Time.deltaTime);
         if (hand.transform.rotation.z >= -360)
         {
             //RESET ROTATION BACK TO 0
         }
 
-        if ( speed  < maxSpeed)
+        if ( speed  < maxSpeed && !stop)
         {
             speed += Time.deltaTime;
         }
@@ -43,30 +42,42 @@ public class WheelSpin : MonoBehaviour
          
         if (Input.GetKey(KeyCode.Space))
         {
-            BigSpin();
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-
+            startWatch = true;
         }
 
         if (!stop) 
         {
             hand.transform.eulerAngles -= rotZ;
-            angle = hand.transform.eulerAngles.z;
+        }
+        if (startWatch)
+        {
+            stopWatch += Time.deltaTime;
+            Debug.Log(stopWatch);
+            if (stopWatch <= 3.0f)
+            {
+                float sUp = 7f;
+                speed += sUp;
+            }
+            if (stopWatch > 3f)
+            {
+                float rand = Random.Range(2f, 5f);
+                speed -= rand;
+                if (speed <= 0)
+                {
+                    speed = 0;
+                }
+            }
         }
     }
 
     void BigSpin()
     {
-        float stopWatch = 0.0f;
-
-        stopWatch += Time.deltaTime;
+        startWatch = true;
+        
         Debug.Log(stopWatch);
 
-        float sUp = 1.4f;
-        speed *= sUp;
 
+        
         
 
 
