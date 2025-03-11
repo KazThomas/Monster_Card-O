@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.06
+  scalar: 0.4
+  rot: 45
 --- !u!114 &-4961466012564010882
 MonoBehaviour:
   m_ObjectHideFlags: 0

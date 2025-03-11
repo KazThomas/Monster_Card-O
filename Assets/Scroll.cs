@@ -26,7 +26,6 @@ public class Scroll : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && !Input.GetMouseButton(0))
         {
-            Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
             Transform rect = icons.GetComponent<RectTransform>();
             rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel, 0);
             rollPos = roll.value;

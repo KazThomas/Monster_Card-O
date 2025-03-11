@@ -42,11 +42,11 @@ public class Card_Creation : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Q))
             {
-                transform.eulerAngles += new Vector3(0, 0, rot);
+                transform.eulerAngles += new Vector3(0, 0, rot) * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.E))
             {
-                transform.eulerAngles -= new Vector3(0, 0, rot);
+                transform.eulerAngles -= new Vector3(0, 0, rot) * Time.deltaTime;
             }
         }
 
