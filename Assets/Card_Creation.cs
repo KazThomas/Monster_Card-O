@@ -12,10 +12,12 @@ public class Card_Creation : MonoBehaviour
     private bool spawn = false;
 
     private CardPlacement place;
+    private SpriteRenderer sr;
 
     private void Start()
     {
         place = GetComponent<CardPlacement>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,18 +34,25 @@ public class Card_Creation : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = Vector2.Lerp(transform.position, mousePos, speed);
 
+            if (Input.GetKeyDown(KeyCode.S) && place.hasDropped == false)
+            {
+                sr.sortingOrder -= 1;
+            }
+
+            if (Input.GetKeyDown(KeyCode.W) && place.hasDropped == false)
+            {
+                sr.sortingOrder += 1;
+            }
+
             Transformations();
+
         }
 
-        if (Input.GetKey(KeyCode.S) && place.hasDropped == false)
-        {
-            GetComponent<SpriteRenderer>().sortingOrder -= 1;
-        }
+    }
 
-        if (Input.GetKey(KeyCode.W) && place.hasDropped == false)
-        {
-            GetComponent<SpriteRenderer>().sortingOrder += 1;
-        }
+    private void FixedUpdate()
+    {
+
     }
 
     void Transformations()
