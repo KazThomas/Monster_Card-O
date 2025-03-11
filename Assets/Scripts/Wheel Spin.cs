@@ -70,22 +70,6 @@ public class WheelSpin : MonoBehaviour
         }
     }
 
-    void BigSpin()
-    {
-        startWatch = true;
-        
-        Debug.Log(stopWatch);
-
-
-        
-        
-
-
-
-        ZoneCheck();
-    }
-
-
     void ZoneCheck()
     {
         if (hand.transform.eulerAngles.z <= 360f && transform.eulerAngles.z > 241f)
