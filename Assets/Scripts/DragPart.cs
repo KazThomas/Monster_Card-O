@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class DragPart : MonoBehaviour
 {
     public GameObject part;
 
-    private bool limit = false;
+    [SerializeField] private bool limit = false;
     public virtual void CreatePart()
     {
         Debug.Log("Test");
-        if (limit == false )
+        part.SetActive(true);
+        part.transform.position = transform.position;
+        limit = true;
+
+        if (limit == true)
         {
-            limit = true;
-            part.SetActive(true);
-            part.transform.position = transform.position;
-
+            GameObject[] bodies = GameObject.FindGameObjectsWithTag("Body");
+            foreach (GameObject body in bodies)
+            {
+                Destroy(body.GetComponent<DragPart>());
+            }
         }
-       
     }
-
 }
