@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Card_Creation : MonoBehaviour
 {
     [SerializeField] private float speed = 0.06f;
+    [SerializeField] private float scalar = 0.4f;
+    [SerializeField] private float rot = 0.01f;
     private Vector3 mousePos;
     private bool spawn = false;
 
@@ -29,6 +31,23 @@ public class Card_Creation : MonoBehaviour
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = Vector2.Lerp(transform.position, mousePos, speed);
+
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                transform.localScale -= new Vector3(scalar, scalar, scalar);
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                transform.localScale += new Vector3(scalar, scalar, scalar);
+            }
+            if (Input.GetKey(KeyCode.Q))
+            {
+                transform.eulerAngles += new Vector3(0, 0, rot);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.eulerAngles -= new Vector3(0, 0, rot);
+            }
         }
 
         if (Input.GetKey(KeyCode.S) && place.hasDropped == false)
