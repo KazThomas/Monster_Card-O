@@ -6,7 +6,6 @@ public class CardPlacement : MonoBehaviour
 {
     public bool hasDropped = false;
 
-
     private void OnMouseUp()
     {
         if (hasDropped == false)
@@ -14,6 +13,7 @@ public class CardPlacement : MonoBehaviour
             Debug.Log("Dropped");
             hasDropped = true;
         }
+
     }
 
 }

@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2865739}
   m_Layer: 5
   m_Name: Ships
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 464410076144202191, guid: 0d35b5b65c8fb9e4d8a399cbcc38a495, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &2865740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 5709696776501421975, guid: be4bfef8d13c76543abb4c817e98e268, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &30079636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 4354560257023708156, guid: 51f51663916d87145ab349fafdfcb87a, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &219744060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 7849593195113008467, guid: 4a1227b9c3a411f479f642bafd3ad310, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &317944335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2331,6 +2335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 584265292441236675, guid: 976501c6b7e9d5b43b0f3e8fd728b3b1, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &648817418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2771,6 +2776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 1231768977834971912, guid: ab04591639979824889cbf5909ab68b3, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &709876396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3418,6 +3424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 4324979478658120636, guid: fb27d9f0c607eb2449ac47b2ffcfafe5, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &812662614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3834,6 +3841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 36840473799680013, guid: 1b30c7bc674b0714296beafb494c9290, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &913414466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3982,6 +3990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 8311605098890270898, guid: 3e79ce9967feb3448acba87c70d893d7, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &932241397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4205,6 +4214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 62582313820271799, guid: a0ff5e5e200828545b5ed935cfc1e824, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1093384178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4488,7 +4498,7 @@ GameObject:
   - component: {fileID: 1248340619}
   m_Layer: 5
   m_Name: Flaps
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4527,6 +4537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 4214104038037678761, guid: 1f5793a016cc21a4ebbdc199a6dc44fa, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1248340620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4675,6 +4686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 8106780673256164011, guid: 1ce8e714fa0507f429ac2447b2cc4926, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1274708127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5105,6 +5117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 7957776238990387186, guid: a36180785e2dbc34da790b97ee8a0180, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1318565771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5253,6 +5266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 5999262258096286605, guid: 4e80442982aa19c428a46daaa023cb99, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1325302832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5496,7 +5510,7 @@ GameObject:
   - component: {fileID: 1405870256}
   m_Layer: 5
   m_Name: Orbs
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5535,6 +5549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 5264659607518759404, guid: 97211e4e56ef53240b1c92a14f708f38, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1405870257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6031,7 +6046,7 @@ GameObject:
   - component: {fileID: 1555846486}
   m_Layer: 5
   m_Name: Clamps
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6070,6 +6085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 5936444229353433135, guid: 6b18a71921ec0aa479362faec41cd962, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1555846487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7311,7 +7327,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1040313161}
   m_Direction: 3
   m_Value: 0
-  m_Size: 0.2
+  m_Size: 0.18
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8202,7 +8218,7 @@ GameObject:
   - component: {fileID: 1955347471}
   m_Layer: 5
   m_Name: Grabs
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8335,6 +8351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 8114295356548811563, guid: b2189209cfb7e52449ee3bcdbb0ce50d, type: 3}
   limit: 0
+  spawned: 0
 --- !u!1 &1965616714
 GameObject:
   m_ObjectHideFlags: 0
@@ -8523,6 +8540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 5149518028769102116, guid: 44b6c1a2eec022943b827fac84206182, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &1990572774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8805,6 +8823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 3913322189764361216, guid: 974b698d223dd2e45be448f1fb3b98de, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &2028763714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9545,6 +9564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 8368456347904444242, guid: cea06d21ebe98c14bb35d08424a821df, type: 3}
   limit: 0
+  spawned: 0
 --- !u!114 &2114184223
 MonoBehaviour:
   m_ObjectHideFlags: 0

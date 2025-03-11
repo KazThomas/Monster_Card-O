@@ -19,7 +19,12 @@ public class Scroll : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 )
+        ScrollWheel();
+    }
+
+    void ScrollWheel()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !Input.GetMouseButton(0))
         {
             Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
             Transform rect = icons.GetComponent<RectTransform>();
@@ -27,12 +32,13 @@ public class Scroll : MonoBehaviour
             rollPos = roll.value;
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !Input.GetMouseButton(0))
         {
             Transform rect = icons.GetComponent<RectTransform>();
             rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel, 0);
             rollPos = roll.value;
         }
+
     }
 
     public void OnMouseDrag()
