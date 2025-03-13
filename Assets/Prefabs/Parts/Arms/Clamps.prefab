@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5554221922102017328}
   - component: {fileID: -5469613921305406790}
   - component: {fileID: -4814920420077354103}
+  - component: {fileID: 9181741793025589012}
   m_Layer: 0
   m_Name: Clamps
   m_TagString: Part
@@ -100,12 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c3928fd3a269141833980b55c72dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
-  scalar: 0.4
-  rot: 45
   Atk: 3
   Shield: 0
   Health: 0
+  speed: 0.06
+  scalar: 0.4
+  rot: 45
 --- !u!61 &-5554221922102017328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,3 +194,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &9181741793025589012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936444229353433135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Atk: 0
+  Shield: 0
+  Health: 0

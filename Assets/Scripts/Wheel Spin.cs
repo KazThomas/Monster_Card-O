@@ -12,7 +12,15 @@ public class WheelSpin : MonoBehaviour
     private bool stop = false;
     [SerializeField] private bool startWatch = false;
     private float stopWatch = 0.0f;
-    // Start is called before the first frame update
+
+    GameObject playerCard;
+    GameObject enemyCard;
+
+    private void Start()
+    {
+        playerCard = GameObject.FindGameObjectWithTag("Card");
+        enemyCard = GameObject.FindGameObjectWithTag("Enemy");
+    }
 
     private void FixedUpdate()
     {
@@ -64,6 +72,7 @@ public class WheelSpin : MonoBehaviour
                 speed -= rand;
                 if (speed <= 0)
                 {
+                    enemyCard.GetComponent<Card>().CardValueEnemy();
                     speed = 0;
                 }
             }
@@ -75,16 +84,40 @@ public class WheelSpin : MonoBehaviour
         if (hand.transform.eulerAngles.z <= 360f && transform.eulerAngles.z > 241f)
         {
             Debug.Log("Atk stat");
+            if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent <Card>().cardAtk)
+            {
+                Debug.Log("Player Wins");
+            }
+            else
+            {
+                Debug.Log("The Enemy Wins");
+            }
         }
 
         if (hand.transform.eulerAngles.z <= 241f && hand.transform.eulerAngles.z > 119f)
         {
             Debug.Log("Shield stat");
+            if (playerCard.GetComponent<Card>().cardShield > enemyCard.GetComponent<Card>().cardShield)
+            {
+                Debug.Log("Player Wins");
+            }
+            else
+            {
+                Debug.Log("The Enemy Wins");
+            }
         }
 
         if (hand.transform.eulerAngles.z <= 119f && hand.transform.eulerAngles.z > 0f)
         {
             Debug.Log("Health stat");
+            if (playerCard.GetComponent<Card>().cardHealth > enemyCard.GetComponent<Card>().cardHealth)
+            {
+                Debug.Log("Player Wins");
+            }
+            else
+            {
+                Debug.Log("The Enemy Wins");
+            }
         }
     }
 }

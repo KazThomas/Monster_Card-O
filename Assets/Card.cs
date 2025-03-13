@@ -33,13 +33,31 @@ public class Card : MonoBehaviour
 
     public void CardValue()
     {
-        GameObject[] parts = GameObject.FindGameObjectsWithTag("Part");
-        for (int i = 0; i < parts.Length; i++)
+        if (this.tag == "Card")
         {
-            Card_Creation card = GetComponent<Card_Creation>();
-            cardAtk += parts[i].GetComponent<Card_Creation>().Atk;
-            cardShield += parts[i].GetComponent<Card_Creation>().Shield;
-            cardHealth += parts[i].GetComponent<Card_Creation>().Health;
+            GameObject[] parts = GameObject.FindGameObjectsWithTag("Part");
+            for (int i = 0; i < parts.Length; i++)
+            {
+                cardAtk += parts[i].GetComponent<Card_Creation>().Atk;
+                cardShield += parts[i].GetComponent<Card_Creation>().Shield;
+                cardHealth += parts[i].GetComponent<Card_Creation>().Health;
+            }
+        }
+
+    }
+
+    public void CardValueEnemy()
+    {
+
+        if (this.tag == "Enemy")
+        {
+            GameObject[] eparts = GameObject.FindGameObjectsWithTag("EPart");
+            for (int i = 0; i < eparts.Length; i++)
+            {
+                cardAtk += eparts[i].GetComponent<Part>().Atk;
+                cardShield += eparts[i].GetComponent<Part>().Shield;
+                cardHealth += eparts[i].GetComponent<Part>().Health;
+            }
         }
     }
 }

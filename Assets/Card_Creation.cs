@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Card_Creation : MonoBehaviour
+public class Card_Creation : Part
 {
     [SerializeField] private float speed = 0.06f;
     [SerializeField] private float scalar = 0.4f;
     [SerializeField] private float rot = 0.01f;
     private Vector3 mousePos;
     private bool spawn = false;
-
-    public int Atk, Shield, Health;
 
     private CardPlacement place;
     private SpriteRenderer sr;

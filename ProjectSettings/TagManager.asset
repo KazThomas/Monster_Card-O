@@ -19,6 +19,7 @@ TagManager:
   - Wheel
   - text
   - Enemy
+  - EParts
   layers:
   - Default
   - TransparentFX
