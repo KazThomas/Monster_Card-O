@@ -9,21 +9,28 @@ public class DragPart : MonoBehaviour
 {
     public GameObject part;
 
+    public bool created = false;
+
     [SerializeField] private bool limit = false;
     public virtual void CreatePart()
     {
-        Debug.Log("Test");
-        part.SetActive(true);
-        part.transform.position = transform.position;
-        limit = true;
-
-        if (limit == true)
+        if (created == false)
         {
-            GameObject[] bodies = GameObject.FindGameObjectsWithTag("Body");
-            foreach (GameObject body in bodies)
+            Debug.Log("Test");
+            part.SetActive(true);
+            part.transform.position = transform.position;
+            limit = true;
+
+            if (limit == true)
             {
-                Destroy(body.GetComponent<DragPart>());
+                GameObject[] bodies = GameObject.FindGameObjectsWithTag("Body");
+                foreach (GameObject body in bodies)
+                {
+                    Destroy(body.GetComponent<DragPart>());
+                }
             }
         }
+        created = true;
+
     }
 }

@@ -82,6 +82,24 @@ public class Card_Creation : MonoBehaviour
             place.canDrop = true;
             transform.parent = collision.transform;
         }
+        if (gameObject.tag == "Part" && collision.gameObject.tag == "Bin")
+        {
+            Destroy(gameObject);
+            Debug.Log(gameObject.name + " Destoryed");
+        }
+        if (gameObject.tag == "Body" && collision.gameObject.tag == "Bin")
+        {
+            GameObject[] icons = GameObject.FindGameObjectsWithTag("Icons");
+            foreach (GameObject icon in icons)
+            {
+                icon.GetComponent<DragPart>().created = false;
+            }
+            transform.position = Vector3.zero;
+            Debug.Log(gameObject.name + " Reset");
+            gameObject.SetActive(false);
+            
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -90,7 +108,7 @@ public class Card_Creation : MonoBehaviour
         {
             Debug.Log("NO PLACE");
             place.canDrop = false;
-            transform.parent = null;
+            transform.SetParent(null, true);
         }
     }
 }
