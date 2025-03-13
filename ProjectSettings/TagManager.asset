@@ -15,6 +15,9 @@ TagManager:
   - test
   - GameMan
   - Bin
+  - Canvas
+  - Wheel
+  - text
   layers:
   - Default
   - TransparentFX
