@@ -14,6 +14,7 @@ TagManager:
   - Icons
   - test
   - GameMan
+  - Bin
   layers:
   - Default
   - TransparentFX
