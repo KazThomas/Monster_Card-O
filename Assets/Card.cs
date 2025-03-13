@@ -51,7 +51,7 @@ public class Card : MonoBehaviour
 
         if (this.tag == "Enemy")
         {
-            GameObject[] eparts = GameObject.FindGameObjectsWithTag("EPart");
+            GameObject[] eparts = GameObject.FindGameObjectsWithTag("EParts");
             for (int i = 0; i < eparts.Length; i++)
             {
                 cardAtk += eparts[i].GetComponent<Part>().Atk;

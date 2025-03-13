@@ -25,16 +25,11 @@ public class WheelSpin : MonoBehaviour
     private void FixedUpdate()
     {
         rotZ  = new Vector3(0,0, speed * Time.deltaTime);
-        if (hand.transform.rotation.z >= -360)
-        {
-            //RESET ROTATION BACK TO 0
-        }
 
         if ( speed  < maxSpeed && !stop)
         {
             speed += Time.deltaTime;
         }
-       // Debug.Log(hand.transform.eulerAngles.z);
 
         if (Input.GetKey(KeyCode.S))
         {
@@ -60,7 +55,6 @@ public class WheelSpin : MonoBehaviour
         if (startWatch)
         {
             stopWatch += Time.deltaTime;
-            Debug.Log(stopWatch);
             if (stopWatch <= 3.0f)
             {
                 float sUp = 7f;
@@ -72,8 +66,13 @@ public class WheelSpin : MonoBehaviour
                 speed -= rand;
                 if (speed <= 0)
                 {
-                    enemyCard.GetComponent<Card>().CardValueEnemy();
                     speed = 0;
+                }
+
+                if (speed == 0)
+                {
+                    enemyCard.GetComponent<Card>().CardValueEnemy();
+                    ZoneCheck();
                 }
             }
         }

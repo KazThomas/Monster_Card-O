@@ -781,6 +781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Radiohead 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5603716333107979583, guid: 9602f61b6c1a71e4fb2b119473e7ae71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
