@@ -103,6 +103,9 @@ MonoBehaviour:
   speed: 0.06
   scalar: 0.4
   rot: 45
+  Atk: 0
+  Shield: 3
+  Health: 0
 --- !u!61 &-3002633473019809896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasDropped: 0
   canDrop: 0
+  gm: {fileID: 0}
 --- !u!50 &9026821191646964657
 Rigidbody2D:
   serializedVersion: 4

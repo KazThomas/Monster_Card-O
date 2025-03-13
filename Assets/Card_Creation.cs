@@ -11,6 +11,8 @@ public class Card_Creation : MonoBehaviour
     private Vector3 mousePos;
     private bool spawn = false;
 
+    public int Atk, Shield, Health;
+
     private CardPlacement place;
     private SpriteRenderer sr;
     private Rigidbody2D rb;

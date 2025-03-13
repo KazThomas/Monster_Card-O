@@ -18,6 +18,7 @@ TagManager:
   - Canvas
   - Wheel
   - text
+  - Enemy
   layers:
   - Default
   - TransparentFX

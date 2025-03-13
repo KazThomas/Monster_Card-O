@@ -7,6 +7,7 @@ public class SubmitButton : MonoBehaviour
 {
     GameObject card;
     GameObject gm;
+    public bool submitted = false;
     //GameObject test;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,8 @@ public class SubmitButton : MonoBehaviour
 
     public void Submit()
     {
+        card.GetComponent<Card>().CardValue();
+        Debug.Log("Atk is: " +card.GetComponent<Card>().cardAtk + "Shield is: " + card.GetComponent<Card>().cardShield + "Health is: " + card.GetComponent<Card>().cardHealth);
         card.transform.SetParent(null, false);
         DontDestroyOnLoad(card);
         DontDestroyOnLoad(gm);

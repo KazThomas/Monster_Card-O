@@ -963,6 +963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
+    - target: {fileID: 3007780997712900108, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3746516690910159047, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1045,7 +1049,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6900277739677390540, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
-    - {fileID: 6553694487465241613, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8479707119924099394, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
     m_AddedGameObjects: []
