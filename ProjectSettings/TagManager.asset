@@ -12,6 +12,8 @@ TagManager:
   - Card
   - Body
   - Icons
+  - test
+  - GameMan
   layers:
   - Default
   - TransparentFX

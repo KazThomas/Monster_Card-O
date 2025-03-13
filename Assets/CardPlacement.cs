@@ -6,13 +6,23 @@ public class CardPlacement : MonoBehaviour
 {
     public bool hasDropped = false;
 
-    public bool canDrop = false; 
+    public bool canDrop = false;
+
+    public GameManager gm;
+    private GameObject gameMan;
+
+    private void Start()
+    {
+        gameMan = GameObject.FindGameObjectWithTag("GameMan");
+        gm = gameMan.GetComponent<GameManager>(); 
+    }
     private void OnMouseUp()
     {
         if (hasDropped == false && canDrop == true)
         {
             Debug.Log("Dropped");
             hasDropped = true;
+            gm.allParts.Add(this.gameObject);
         }
 
     }

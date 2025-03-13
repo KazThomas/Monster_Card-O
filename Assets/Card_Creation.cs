@@ -14,12 +14,14 @@ public class Card_Creation : MonoBehaviour
     private CardPlacement place;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
+    private GameObject t;
 
     private void Start()
     {
         place = GetComponent<CardPlacement>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        t = GameObject.FindWithTag("test");
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class Card_Creation : MonoBehaviour
         {
             Debug.Log("CAN PLACE");
             place.canDrop = true;
+            transform.parent = collision.transform;
         }
     }
 
@@ -87,6 +90,7 @@ public class Card_Creation : MonoBehaviour
         {
             Debug.Log("NO PLACE");
             place.canDrop = false;
+            transform.parent = null;
         }
     }
 }
