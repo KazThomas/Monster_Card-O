@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8234185434720796362}
   - component: {fileID: -2404173846454294510}
   - component: {fileID: -5070426340491323345}
+  - component: {fileID: -2284437079196267718}
   m_Layer: 0
   m_Name: Stalks
   m_TagString: Part
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasDropped: 0
+  canDrop: 0
 --- !u!61 &-5070426340491323345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +162,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.84, y: 0.93}
   m_EdgeRadius: 0
+--- !u!50 &-2284437079196267718
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149518028769102116}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2

@@ -13,11 +13,13 @@ public class Card_Creation : MonoBehaviour
 
     private CardPlacement place;
     private SpriteRenderer sr;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         place = GetComponent<CardPlacement>();
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -50,11 +52,6 @@ public class Card_Creation : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     void Transformations()
     {
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -72,6 +69,24 @@ public class Card_Creation : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             transform.eulerAngles -= new Vector3(0, 0, rot) * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Card")
+        {
+            Debug.Log("CAN PLACE");
+            place.canDrop = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Card")
+        {
+            Debug.Log("NO PLACE");
+            place.canDrop = false;
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9175908470472211759}
   - component: {fileID: 8441513455700471828}
   - component: {fileID: 1761697544495206538}
+  - component: {fileID: 3738427513592890610}
   m_Layer: 0
   m_Name: winged
   m_TagString: Part
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasDropped: 0
+  canDrop: 0
 --- !u!61 &1761697544495206538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +162,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.16, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &3738427513592890610
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4324979478658120636}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2

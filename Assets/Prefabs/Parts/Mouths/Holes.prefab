@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8411859415649145283}
   - component: {fileID: -4961466012564010882}
   - component: {fileID: -257659813731666426}
+  - component: {fileID: -9102398783375646088}
   m_Layer: 0
   m_Name: Holes
   m_TagString: Part
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasDropped: 0
+  canDrop: 0
 --- !u!61 &-257659813731666426
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +162,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.22, y: 1.22}
   m_EdgeRadius: 0
+--- !u!50 &-9102398783375646088
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849593195113008467}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2
