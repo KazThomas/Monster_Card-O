@@ -9,12 +9,10 @@ public class Card : MonoBehaviour
     public int cardAtk, cardShield, cardHealth = 0;
 
     GameObject canvas;
-    GameObject submitButt;
     // Update is called once per frame
 
     private void Start()
     {
-        submitButt = GameObject.FindGameObjectWithTag("text");
     }
     void Update()
     {
