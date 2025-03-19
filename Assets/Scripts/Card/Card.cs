@@ -40,6 +40,13 @@ public class Card : MonoBehaviour
                 cardShield += parts[i].GetComponent<Card_Creation>().Shield;
                 cardHealth += parts[i].GetComponent<Card_Creation>().Health;
             }
+            GameObject bodies = GameObject.FindGameObjectWithTag("Body");
+            if (bodies != null)
+            {
+                cardAtk += bodies.GetComponent<BodyStrength>().Atk;
+                cardShield += bodies.GetComponent<BodyStrength>().Shield;
+                cardHealth += bodies.GetComponent<BodyStrength>().Health;
+            }
         }
 
     }
@@ -55,6 +62,13 @@ public class Card : MonoBehaviour
                 cardAtk += eparts[i].GetComponent<Part>().Atk;
                 cardShield += eparts[i].GetComponent<Part>().Shield;
                 cardHealth += eparts[i].GetComponent<Part>().Health;
+            }
+            GameObject bodies = GameObject.FindGameObjectWithTag("EBody");
+            if (bodies != null)
+            {
+                cardAtk += bodies.GetComponent<BodyStrength>().Atk;
+                cardShield += bodies.GetComponent<BodyStrength>().Shield;
+                cardHealth += bodies.GetComponent<BodyStrength>().Health;
             }
         }
     }

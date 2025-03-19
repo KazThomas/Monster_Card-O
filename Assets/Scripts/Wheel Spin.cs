@@ -83,7 +83,7 @@ public class WheelSpin : MonoBehaviour
         if (hand.transform.eulerAngles.z <= 360f && transform.eulerAngles.z > 241f)
         {
             Debug.Log("Atk stat");
-            if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent <Card>().cardAtk)
+            if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent<Card>().cardAtk)
             {
                 Debug.Log("Player Wins");
             }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -388345573984189677}
   - component: {fileID: 5994151983277164480}
   - component: {fileID: -1158699411298167502}
+  - component: {fileID: 6373732438369018978}
   m_Layer: 0
   m_Name: grabbs
   m_TagString: Part
@@ -100,9 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c3928fd3a269141833980b55c72dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk: 2
-  Shield: 0
-  Health: 1
+  Health: 2
+  Atk: 1
+  Shield: 1
+  Cost: 4
   speed: 0.06
   scalar: 0.4
   rot: 45
@@ -193,3 +195,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &6373732438369018978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114295356548811563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 2
+  Atk: 1
+  Shield: 1
+  Cost: 4

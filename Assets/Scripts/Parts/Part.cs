@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-    public int Atk, Shield, Health;
+    public int Health, Atk, Shield, Cost;
 }

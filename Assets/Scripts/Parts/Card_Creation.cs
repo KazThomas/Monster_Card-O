@@ -13,15 +13,15 @@ public class Card_Creation : Part
 
     private CardPlacement place;
     private SpriteRenderer sr;
-    private Rigidbody2D rb;
-    private GameObject t;
+
 
     private void Start()
     {
         place = GetComponent<CardPlacement>();
         sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-        t = GameObject.FindWithTag("test");
+        Health = GetComponent<Part>().Health;
+        Atk = GetComponent<Part>().Atk;
+        Shield = GetComponent<Part>().Shield;
     }
 
     // Update is called once per frame

@@ -171,9 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 3
   Atk: 0
   Shield: 0
-  Health: 0
+  Cost: 3
 --- !u!1 &3592729642744554096
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,9 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk: 2
-  Shield: 0
-  Health: 1
+  Health: 2
+  Atk: 1
+  Shield: 1
+  Cost: 4
 --- !u!1 &3800405897687453878
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,9 +521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk: 0
-  Shield: 0
   Health: 0
+  Atk: 1
+  Shield: 0
+  Cost: 1
 --- !u!1 &5221364513581273958
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,9 +537,10 @@ GameObject:
   - component: {fileID: 9193708195737314497}
   - component: {fileID: 1272677290213191174}
   - component: {fileID: 815652597833452533}
+  - component: {fileID: 2599943567733254497}
   m_Layer: 0
   m_Name: Acorn (1)
-  m_TagString: Body
+  m_TagString: EBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,6 +684,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &2599943567733254497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221364513581273958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c58883d1661974aa58390a8daeb235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1
+  Atk: 0
+  Shield: 0
+  Strength: 15
 --- !u!1 &5603716333107979583
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,9 +908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk: 0
-  Shield: 0
   Health: 0
+  Atk: 1
+  Shield: 0
+  Cost: 1
 --- !u!1 &8939260273812769599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06ce5c41c415e48996e49218aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
   Atk: 0
   Shield: 0
-  Health: 0
+  Cost: 2
