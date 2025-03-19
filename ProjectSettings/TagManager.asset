@@ -20,6 +20,7 @@ TagManager:
   - text
   - Enemy
   - EParts
+  - EBody
   layers:
   - Default
   - TransparentFX
