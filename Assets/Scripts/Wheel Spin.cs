@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WheelSpin : MonoBehaviour
 {
@@ -82,53 +83,78 @@ public class WheelSpin : MonoBehaviour
     {
         if (hand.transform.eulerAngles.z <= 360f && transform.eulerAngles.z > 241f)
         {
-            Debug.Log("Atk stat");
-            if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent<Card>().cardAtk)
-            {
-                Debug.Log("Player Wins");
-            }
-            if (enemyCard.GetComponent<Card>().cardAtk > playerCard.GetComponent<Card>().cardAtk)
-            {
-                Debug.Log("The Enemy Wins");
-            }
-            else
-            {
-                Debug.Log("IT'S A TIE!");
-            }
+            Atk();
         }
 
         if (hand.transform.eulerAngles.z <= 241f && hand.transform.eulerAngles.z > 119f)
         {
-            Debug.Log("Shield stat");
-            if (playerCard.GetComponent<Card>().cardShield > enemyCard.GetComponent<Card>().cardShield)
-            {
-                Debug.Log("Player Wins");
-            }
-            if (enemyCard.GetComponent<Card>().cardShield > playerCard.GetComponent<Card>().cardShield)
-            {
-                Debug.Log("The Enemy Wins");
-            }
-            else
-            {
-                Debug.Log("IT'S A TIE!");
-            }
+            Shield();
         }
 
         if (hand.transform.eulerAngles.z <= 119f && hand.transform.eulerAngles.z > 0f)
         {
-            Debug.Log("Health stat");
-            if (playerCard.GetComponent<Card>().cardHealth > enemyCard.GetComponent<Card>().cardHealth)
-            {
-                Debug.Log("Player Wins");
-            }
-            if (enemyCard.GetComponent<Card>().cardHealth > playerCard.GetComponent<Card>().cardHealth)
-            {
-                Debug.Log("The Enemy Wins");
-            }
-            else
-            {
-                Debug.Log("IT'S A TIE!");
-            }
+            Health();
         }
+    }
+
+    void Atk()
+    {
+        Debug.Log("Atk stat");
+        if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent<Card>().cardAtk)
+        {
+            Invoke("WinScreen", 2f);
+        }
+        if (enemyCard.GetComponent<Card>().cardAtk > playerCard.GetComponent<Card>().cardAtk)
+        {
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
+        {
+            Debug.Log("IT'S A TIE!");
+        }
+    }
+
+    void Shield()
+    {
+        Debug.Log("Shield stat");
+        if (playerCard.GetComponent<Card>().cardShield > enemyCard.GetComponent<Card>().cardShield)
+        {
+            Invoke("WinScreen", 2f);
+        }
+        if (enemyCard.GetComponent<Card>().cardShield > playerCard.GetComponent<Card>().cardShield)
+        {
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
+        {
+            Debug.Log("IT'S A TIE!");
+        }
+    }
+
+    void Health()
+    {
+        Debug.Log("Health stat");
+        if (playerCard.GetComponent<Card>().cardHealth > enemyCard.GetComponent<Card>().cardHealth)
+        {
+            Invoke("WinScreen", 2f);   
+        }
+        if (enemyCard.GetComponent<Card>().cardHealth > playerCard.GetComponent<Card>().cardHealth)
+        {
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
+        {
+            Debug.Log("IT'S A TIE!");
+        }
+    }
+
+    void WinScreen()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+
+    void LoseScreen()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

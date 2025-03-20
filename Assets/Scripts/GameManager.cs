@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject text;
 
+    [SerializeField] private GameObject[] Enemies;
+
     private void FixedUpdate()
     {
         Scene scene = SceneManager.GetActiveScene();

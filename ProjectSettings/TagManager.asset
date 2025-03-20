@@ -21,6 +21,7 @@ TagManager:
   - Enemy
   - EParts
   - EBody
+  - ESpawner
   layers:
   - Default
   - TransparentFX

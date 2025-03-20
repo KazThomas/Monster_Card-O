@@ -9,6 +9,7 @@ public class Card : MonoBehaviour
     public int cardAtk, cardShield, cardHealth = 0;
 
     GameObject canvas;
+
     // Update is called once per frame
 
     private void Start()
@@ -21,12 +22,11 @@ public class Card : MonoBehaviour
         {
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             transform.SetParent(canvas.transform, false);
+
             GameObject test = GameObject.FindGameObjectWithTag("test");
             transform.position = test.transform.position;
-            //transform.position.x -= 200;
 
         }
-
     }
 
     public void CardValue()
@@ -53,7 +53,6 @@ public class Card : MonoBehaviour
 
     public void CardValueEnemy()
     {
-
         if (this.tag == "Enemy")
         {
             GameObject[] eparts = GameObject.FindGameObjectsWithTag("EParts");
