@@ -57,7 +57,7 @@ public class WheelSpin : MonoBehaviour
             stopWatch += Time.deltaTime;
             if (stopWatch <= 3.0f)
             {
-                float sUp = 7f;
+                float sUp = Random.Range(5f, 9f);
                 speed += sUp;
             }
             if (stopWatch > 3f)

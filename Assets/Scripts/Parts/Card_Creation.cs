@@ -78,9 +78,12 @@ public class Card_Creation : Part
     {
         if (collision.gameObject.tag == "Card")
         {
-            Debug.Log("CAN PLACE");
-            place.canDrop = true;
-            transform.parent = collision.transform;
+            if (collision.gameObject.activeInHierarchy)
+            {
+                Debug.Log("CAN PLACE");
+                place.canDrop = true;
+                transform.parent = collision.transform;
+            }
         }
         if (gameObject.tag == "Part" && collision.gameObject.tag == "Bin")
         {
@@ -106,9 +109,12 @@ public class Card_Creation : Part
     {
         if (collision.gameObject.tag == "Card")
         {
-            Debug.Log("NO PLACE");
-            place.canDrop = false;
-            transform.SetParent(null, true);
+            if (collision.gameObject.activeInHierarchy)
+            {
+                Debug.Log("NO PLACE");
+                place.canDrop = false;
+                transform.SetParent(null, true);
+            }
         }
     }
 }
