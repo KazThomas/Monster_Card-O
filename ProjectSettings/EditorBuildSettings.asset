@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wheel Room.unity
     guid: 5cffd0690fdd543479765388faf18731
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 13b78f705d5ff954482396890c7f1006
   m_configObjects: {}
