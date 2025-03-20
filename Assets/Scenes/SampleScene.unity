@@ -10168,6 +10168,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1440373642}
     m_Modifications:
+    - target: {fileID: 2666263807982823557, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_Size.x
+      value: 486.38568
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666263807982823557, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_Size.y
+      value: 689.8744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666263807982823557, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.8668213
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666263807982823557, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_Offset.y
+      value: -4.6671906
+      objectReference: {fileID: 0}
     - target: {fileID: 3007780997712900108, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
       propertyPath: m_Name
       value: Card

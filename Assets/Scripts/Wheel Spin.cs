@@ -87,9 +87,13 @@ public class WheelSpin : MonoBehaviour
             {
                 Debug.Log("Player Wins");
             }
-            else
+            if (enemyCard.GetComponent<Card>().cardAtk > playerCard.GetComponent<Card>().cardAtk)
             {
                 Debug.Log("The Enemy Wins");
+            }
+            else
+            {
+                Debug.Log("IT'S A TIE!");
             }
         }
 
@@ -100,9 +104,13 @@ public class WheelSpin : MonoBehaviour
             {
                 Debug.Log("Player Wins");
             }
-            else
+            if (enemyCard.GetComponent<Card>().cardShield > playerCard.GetComponent<Card>().cardShield)
             {
                 Debug.Log("The Enemy Wins");
+            }
+            else
+            {
+                Debug.Log("IT'S A TIE!");
             }
         }
 
@@ -113,9 +121,13 @@ public class WheelSpin : MonoBehaviour
             {
                 Debug.Log("Player Wins");
             }
-            else
+            if (enemyCard.GetComponent<Card>().cardHealth > playerCard.GetComponent<Card>().cardHealth)
             {
                 Debug.Log("The Enemy Wins");
+            }
+            else
+            {
+                Debug.Log("IT'S A TIE!");
             }
         }
     }
