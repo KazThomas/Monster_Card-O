@@ -5,4 +5,5 @@ using UnityEngine;
 public class BodyStrength : MonoBehaviour
 {
     public int Health, Atk, Shield, Strength;
+
 }

@@ -6,10 +6,12 @@ public class Undo : MonoBehaviour
 {
     public GameManager gm;
     private GameObject gameMan;
+    private GameObject card;
     private void Start()
     {
         gameMan = GameObject.FindGameObjectWithTag("GameMan");
         gm = gameMan.GetComponent<GameManager>();
+        card = GameObject.FindWithTag("Card");
     }
     public void UndoButton()
     {
@@ -21,7 +23,8 @@ public class Undo : MonoBehaviour
             CardPlacement place = go.GetComponent<CardPlacement>();
             place.hasDropped = false;
             go.transform.position = Vector3.zero;
-
+            card.GetComponent<Card>().SubtractValues();
+            card.GetComponent<Card>().UpdateText();
             gm.allParts.RemoveAt(gm.allParts.Count - 1);
         }
 

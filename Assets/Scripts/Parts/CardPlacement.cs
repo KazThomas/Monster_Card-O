@@ -10,11 +10,22 @@ public class CardPlacement : MonoBehaviour
 
     public GameManager gm;
     private GameObject gameMan;
-
+    private GameObject card;
+    private Part part;
+    private BodyStrength bodyStrength;
     private void Start()
     {
         gameMan = GameObject.FindGameObjectWithTag("GameMan");
-        gm = gameMan.GetComponent<GameManager>(); 
+        card = GameObject.FindGameObjectWithTag("Card");
+        gm = gameMan.GetComponent<GameManager>();
+        if (this.gameObject.tag == "Part")
+        {
+            part =this.gameObject.GetComponent<Part>();
+        }
+        if (this.gameObject.tag == "Body")
+        {
+            bodyStrength = this.gameObject.GetComponent<BodyStrength>();
+        }
     }
     private void OnMouseUp()
     {
@@ -22,22 +33,50 @@ public class CardPlacement : MonoBehaviour
         {
             Debug.Log("Dropped");
             hasDropped = true;
+            card.GetComponent<Card>().AddValues();
+            card.GetComponent<Card>().UpdateText();
             gm.allParts.Add(this.gameObject);
         }
 
     }
 
-    private void Update()
+    public int AddHealth(int health)
     {
-        //RaycastHit2D hit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+        if (this.gameObject.tag == "Part")
+        {
+            health += part.Health;
+        }
+        if (this.gameObject.tag == "Body")
+        {
+            health += bodyStrength.Health;
+        }
+        return health;
+    }
 
-        //Debug.Log(hit.transform.name);
+    public int AddAtk(int atk)
+    {
+        if (this.gameObject.tag == "Part")
+        {
+            atk += part.Atk;
+        }
+        if (this.gameObject.tag == "Body")
+        {
+            atk += bodyStrength.Atk;
+        }
+        return atk;
+    }
 
-        //if (Input.GetMouseButtonUp(0))
-        //{
-        //    RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-        //    Debug.Log(rayHit.transform.name);
-        //}
+    public int AddShield(int shield)
+    {
+        if (this.gameObject.tag == "Part")
+        {
+            shield += part.Shield;
+        }
+        if (this.gameObject.tag == "Body")
+        {
+            shield += bodyStrength.Shield;
+        }
+        return shield;
     }
 
 }
