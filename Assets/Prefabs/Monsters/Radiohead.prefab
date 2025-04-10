@@ -710,8 +710,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4575474224435086362}
   m_Layer: 0
-  m_Name: Radiohead 1
-  m_TagString: Untagged
+  m_Name: Radiohead
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

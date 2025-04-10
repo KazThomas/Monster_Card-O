@@ -1414,6 +1414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 324330844}
   - component: {fileID: 324330843}
+  - component: {fileID: 324330845}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameMan
@@ -1434,8 +1435,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allParts: []
-  text: {fileID: 0}
-  Enemies: []
+  Enemy: []
+  prize:
+  - {fileID: 8114295356548811563, guid: b2189209cfb7e52449ee3bcdbb0ce50d, type: 3}
+  - {fileID: 36840473799680013, guid: 1b30c7bc674b0714296beafb494c9290, type: 3}
+  spew: {fileID: 0}
 --- !u!4 &324330844
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,6 +1455,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324330845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324330842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66b74e250058304097879552d6738b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winnings:
+  - {fileID: 8114295356548811563, guid: b2189209cfb7e52449ee3bcdbb0ce50d, type: 3}
+  - {fileID: 36840473799680013, guid: 1b30c7bc674b0714296beafb494c9290, type: 3}
+  spawnLoc: {fileID: 0}
 --- !u!1 &376159180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5133,7 +5153,7 @@ Transform:
   m_GameObject: {fileID: 1177958712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.764995, y: -0.7807421, z: 91.64921}
+  m_LocalPosition: {x: 5.54, y: -0.7807421, z: 91.64921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -14,13 +14,17 @@ public class WheelSpin : MonoBehaviour
     [SerializeField] private bool startWatch = false;
     private float stopWatch = 0.0f;
 
+    private GameManager gm;
     GameObject playerCard;
     GameObject enemyCard;
+    public GameObject boss;
 
-    private void Start()
+    private void Awake()
     {
+        gm = GameObject.FindGameObjectWithTag("GameMan").GetComponent<GameManager>();
         playerCard = GameObject.FindGameObjectWithTag("Card");
         enemyCard = GameObject.FindGameObjectWithTag("Enemy");
+        boss = GameObject.FindGameObjectWithTag("Boss");
     }
 
     private void FixedUpdate()

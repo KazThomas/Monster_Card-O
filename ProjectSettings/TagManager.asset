@@ -22,6 +22,8 @@ TagManager:
   - EParts
   - EBody
   - ESpawner
+  - Boss
+  - Spawner
   layers:
   - Default
   - TransparentFX

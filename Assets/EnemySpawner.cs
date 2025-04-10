@@ -19,10 +19,4 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(Enemies[rand], transform.position, Quaternion.identity);
         }   
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

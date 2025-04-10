@@ -543,6 +543,7 @@ MonoBehaviour:
   maxSpeed: 120
   hand: {fileID: 509037701}
   startWatch: 0
+  boss: {fileID: 0}
 --- !u!212 &509037703
 SpriteRenderer:
   m_ObjectHideFlags: 0
