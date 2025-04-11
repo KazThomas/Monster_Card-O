@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
                         spew = prize[2];
                         DontDestroyOnLoad(spew);
                         break;
+                    case "Dodge(Clone)":
+                        Debug.Log("ITS THE TRI-BEAM");
+                        spew = prize[3];
+                        DontDestroyOnLoad(spew);
+                        break;
                 }
             }
             //if (Enemy.Count < 1)

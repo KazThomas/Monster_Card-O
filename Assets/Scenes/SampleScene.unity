@@ -1440,6 +1440,7 @@ MonoBehaviour:
   - {fileID: 8114295356548811563, guid: b2189209cfb7e52449ee3bcdbb0ce50d, type: 3}
   - {fileID: 36840473799680013, guid: 1b30c7bc674b0714296beafb494c9290, type: 3}
   - {fileID: 584265292441236675, guid: 976501c6b7e9d5b43b0f3e8fd728b3b1, type: 3}
+  - {fileID: 5264659607518759404, guid: 97211e4e56ef53240b1c92a14f708f38, type: 3}
   spew: {fileID: 0}
 --- !u!4 &324330844
 Transform:
@@ -1472,6 +1473,7 @@ MonoBehaviour:
   - {fileID: 8114295356548811563, guid: b2189209cfb7e52449ee3bcdbb0ce50d, type: 3}
   - {fileID: 36840473799680013, guid: 1b30c7bc674b0714296beafb494c9290, type: 3}
   - {fileID: 584265292441236675, guid: 976501c6b7e9d5b43b0f3e8fd728b3b1, type: 3}
+  - {fileID: 5264659607518759404, guid: 97211e4e56ef53240b1c92a14f708f38, type: 3}
   spawnLoc: {fileID: 0}
 --- !u!1 &376159180
 GameObject:
