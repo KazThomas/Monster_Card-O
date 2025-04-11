@@ -9,14 +9,19 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         int rand = Random.Range(0, Enemies.Length);
-        Vector3 bugBoy = new Vector3(5.02f, 0.14f, 0);
-        if (rand == 0 )
+        Vector3 bugBoy = new Vector3(5.02f, 0.14f, 0); 
+        Vector3 pants = new Vector3(5.66f, -1.43f, 0);
+        switch (rand)
         {
-            Instantiate(Enemies[0], bugBoy, Quaternion.identity);
+            case 0:
+                Instantiate(Enemies[rand], bugBoy, Quaternion.identity);
+                break;
+            case 1:
+                Instantiate(Enemies[rand], transform.position, Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(Enemies[rand], pants, Quaternion.identity);
+                break;
         }
-        else
-        {
-            Instantiate(Enemies[rand], transform.position, Quaternion.identity);
-        }   
     }
 }

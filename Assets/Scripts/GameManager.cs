@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
                         spew = prize[0];
                         DontDestroyOnLoad(spew);
                         break;
+                    case "Pantalones(Clone)":
+                        Debug.Log("ITS THE PANTS");
+                        spew = prize[2];
+                        DontDestroyOnLoad(spew);
+                        break;
                 }
             }
             //if (Enemy.Count < 1)
