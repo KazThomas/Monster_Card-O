@@ -76,7 +76,7 @@ public class Card_Creation : Part
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Card")
+        if (collision.gameObject.layer == 6) //card layer
         {
             if (collision.gameObject.activeInHierarchy)
             {
