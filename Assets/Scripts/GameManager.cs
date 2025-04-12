@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> allParts = new List<GameObject>();
     public List<GameObject> Enemy = new List<GameObject>();
 
+    public List<GameObject> Awards = new List<GameObject>();
+
     private WheelSpin wSpin;
     [SerializeField] private GameObject[] prize;
     public GameObject spew;
@@ -19,38 +21,43 @@ public class GameManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "SampleScene" && spew != null)
         {
+            hasSpawned = false;
             GameObject[] icons = GameObject.FindGameObjectsWithTag("Icons");
             foreach (GameObject icon in icons)
             {
-                switch (spew.name)
+                foreach (GameObject award in Awards)
                 {
-                    case "grabbs":
-                        if (icon.name == "Grabs")
-                        {
-                            icon.GetComponent<NonBodyParts>().unlocked = true;
-                        }
-                        break;
-                    case "Jets":
-                        if (icon.name == "Jets")
-                        {
-                            icon.GetComponent<NonBodyParts>().unlocked = true;
-                        }
-                        break;
-                    case "jeans":
-                        if (icon.name == "Jeans")
-                        {
-                            icon.GetComponent<NonBodyParts>().unlocked = true;
-                        }
-                        break;
-                    case "Orbs":
-                        if (icon.name == "Orbs")
-                        {
-                            icon.GetComponent<NonBodyParts>().unlocked = true;
-                        }
-                        break;
+                    switch (award.name)
+                    {
+                        case "grabbs":
+                            if (icon.name == "Grabs")
+                            {
+                                icon.GetComponent<NonBodyParts>().unlocked = true;
+                            }
+                            break;
+                        case "Jets":
+                            if (icon.name == "Jets")
+                            {
+                                icon.GetComponent<NonBodyParts>().unlocked = true;
+                            }
+                            break;
+                        case "jeans":
+                            if (icon.name == "Jeans")
+                            {
+                                icon.GetComponent<NonBodyParts>().unlocked = true;
+
+                            }
+                            break;
+                        case "Orbs":
+                            if (icon.name == "Orbs")
+                            {
+                                icon.GetComponent<NonBodyParts>().unlocked = true;
+                            }
+                            break;
+
+                    }
                 }
             }
-           
         }
 
 
@@ -92,12 +99,13 @@ public class GameManager : MonoBehaviour
             //    Enemy.Add(GameObject.FindGameObjectWithTag("Boss"));
             //}
         }
-        if (scene.name == "WinScreen" && hasSpawned == false)
+        if (scene.name == "WinScreen" && hasSpawned == false )
         {
             Instantiate(spew);
             //PrizeSpawner ps = GetComponent<PrizeSpawner>();
             //ps.enabled = true;
             hasSpawned = true;
+            Awards.Add(spew);
             Invoke("BackToSetUp", 3.2f);
         }
     }
