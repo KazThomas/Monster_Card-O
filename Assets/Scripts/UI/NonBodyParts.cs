@@ -19,6 +19,15 @@ public class NonBodyParts : DragPart
         }
     }
 
+    private void Update()
+    {
+        if (unlocked == true)
+        {
+            GetComponent<UnityEngine.UI.Image>().sprite = notLocked;
+        }
+    }
+
+
     public override void CreatePart()
     {
         if (unlocked)

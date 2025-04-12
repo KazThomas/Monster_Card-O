@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 30079635}
   m_Layer: 5
   m_Name: Lash
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 219744059}
   m_Layer: 5
   m_Name: Tongue
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 317944334}
   m_Layer: 5
   m_Name: Holes
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2518,7 +2518,7 @@ GameObject:
   - component: {fileID: 648817417}
   m_Layer: 5
   m_Name: Jeans
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 709876395}
   m_Layer: 5
   m_Name: Real
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3750,7 +3750,7 @@ GameObject:
   - component: {fileID: 812662613}
   m_Layer: 5
   m_Name: Winged
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4171,7 +4171,7 @@ GameObject:
   - component: {fileID: 913414465}
   m_Layer: 5
   m_Name: Jets
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4445,7 +4445,7 @@ GameObject:
   - component: {fileID: 932241396}
   m_Layer: 5
   m_Name: Visor
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4820,7 +4820,7 @@ GameObject:
   - component: {fileID: 1093384177}
   m_Layer: 5
   m_Name: Insect
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5465,7 +5465,7 @@ GameObject:
   - component: {fileID: 1274708126}
   m_Layer: 5
   m_Name: Magic
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5901,7 +5901,7 @@ GameObject:
   - component: {fileID: 1318565770}
   m_Layer: 5
   m_Name: Bend
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6054,7 +6054,7 @@ GameObject:
   - component: {fileID: 1325302831}
   m_Layer: 5
   m_Name: Shoes
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9355,7 +9355,7 @@ GameObject:
   - component: {fileID: 1990572773}
   m_Layer: 5
   m_Name: Stalks
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9642,7 +9642,7 @@ GameObject:
   - component: {fileID: 2028763713}
   m_Layer: 5
   m_Name: Fangs
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10388,7 +10388,7 @@ GameObject:
   - component: {fileID: 2114184222}
   m_Layer: 5
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Icons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
