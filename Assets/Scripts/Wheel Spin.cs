@@ -47,7 +47,7 @@ public class WheelSpin : MonoBehaviour
             ZoneCheck();
 
         }
-         
+
         if (Input.GetKey(KeyCode.Space))
         {
             startWatch = true;

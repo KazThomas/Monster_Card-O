@@ -24,6 +24,7 @@ TagManager:
   - ESpawner
   - Boss
   - Spawner
+  - Controls
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject spew;
 
     private bool hasSpawned = false;
+    public bool showing = false;
     private void FixedUpdate()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -63,13 +64,17 @@ public class GameManager : MonoBehaviour
 
         if (scene.name == "Wheel Room")
         {
+            
             if (Input.GetMouseButton(0))
             {
                 //text = GameObject.FindGameObjectWithTag("text");
                 //text.SetActive(false);
+                GameObject controls = GameObject.FindGameObjectWithTag("Controls");
+                controls.transform.GetChild(0).gameObject.SetActive(false);
                 GameObject wheel = GameObject.FindGameObjectWithTag("Wheel");
                 wheel.transform.GetChild(0).gameObject.SetActive(true);
                 wSpin = FindObjectOfType<WheelSpin>();
+                
                 switch (wSpin.boss.name)
                 {
                     case "FlyBoy(Clone)":
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
                         DontDestroyOnLoad(spew);
                         break;
                 }
+                showing = true;
             }
             //if (Enemy.Count < 1)
             //{
