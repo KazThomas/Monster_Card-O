@@ -25,6 +25,7 @@ TagManager:
   - Boss
   - Spawner
   - Controls
+  - BodyIcons
   layers:
   - Default
   - TransparentFX

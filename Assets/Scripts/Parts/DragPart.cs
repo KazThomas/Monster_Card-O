@@ -11,24 +11,25 @@ public class DragPart : MonoBehaviour
 
     public bool created = false;
 
-    [SerializeField] private bool limit = false;
+    private void Update()
+    {
+        if (created == true)
+        {
+            GameObject[] allBodies = GameObject.FindGameObjectsWithTag("BodyIcons");
+            foreach (GameObject body in allBodies)
+            {
+                body.GetComponent<DragPart>().created = true;
+            }
+        }
+    }
+
+
     public virtual void CreatePart()
     {
         if (created == false)
         {
-            Debug.Log("Test");
             part.SetActive(true);
             part.transform.position = transform.position;
-            limit = true;
-
-            if (limit == true)
-            {
-                GameObject[] bodies = GameObject.FindGameObjectsWithTag("Body");
-                foreach (GameObject body in bodies)
-                {
-                    Destroy(body.GetComponent<DragPart>());
-                }
-            }
         }
         created = true;
 
