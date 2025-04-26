@@ -12320,6 +12320,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1009281052}
     - target: {fileID: 6553694487465241613, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: txtbox
+      value: 
+      objectReference: {fileID: 1053933928}
+    - target: {fileID: 6553694487465241613, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
       propertyPath: HealthTxt
       value: 
       objectReference: {fileID: 376159182}

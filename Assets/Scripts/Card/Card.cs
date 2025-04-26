@@ -13,6 +13,7 @@ public class Card : MonoBehaviour
     private GameObject gm;
 
     [SerializeField] GameObject rules;
+    [SerializeField] GameObject txtbox;
 
     GameObject canvas;
     bool addedBody = false;
@@ -27,6 +28,7 @@ public class Card : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "Wheel Room" && this.tag == "Card")
         {
+            txtbox.SetActive(false);
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             transform.SetParent(canvas.transform, false);
 
@@ -93,13 +95,13 @@ public class Card : MonoBehaviour
                     cardWeight -= b.GetComponent<Card_Creation>().Cost;
                 }
             }
-            if (addedBody == true)
-            {
-                GameObject body = GameObject.FindGameObjectWithTag("Body");
-                cardMaxWeight -= body.GetComponent<BodyStrength>().Strength;
-            }
-            addedBody = false;
         }
+    }
+
+    public void SubtractBody()
+    {
+        cardMaxWeight = 0;
+        addedBody = false;
     }
 
     public void UpdateText()

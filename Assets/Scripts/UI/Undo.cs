@@ -24,7 +24,14 @@ public class Undo : MonoBehaviour
             CardPlacement place = go.GetComponent<CardPlacement>();
             place.hasDropped = false;
             go.transform.position = Vector3.zero;
-            card.GetComponent<Card>().SubtractValues();
+            if (go.tag == "Part")
+            {
+                card.GetComponent<Card>().SubtractValues();
+            }
+            if (go.tag == "Body")
+            {
+                card.GetComponent<Card>().SubtractBody();
+            }
             card.GetComponent<Card>().UpdateText();
             gm.allParts.RemoveAt(gm.allParts.Count - 1);
         }
