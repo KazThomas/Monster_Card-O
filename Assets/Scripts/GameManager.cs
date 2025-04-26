@@ -114,10 +114,15 @@ public class GameManager : MonoBehaviour
             Awards.Add(spew);
             Invoke("BackToSetUp", 3.2f);
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            OnApplicationQuit();
+        }
     }
 
-    void BackToSetUp()
+    private void OnApplicationQuit()
     {
-        SceneManager.LoadScene("SampleScene");
+        Application.Quit();
     }
 }

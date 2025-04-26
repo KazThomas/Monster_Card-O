@@ -114,6 +114,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            Invoke("LoseScreen", 2f);
         }
     }
 
@@ -131,6 +132,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            Invoke("LoseScreen", 2f);
         }
     }
 
@@ -148,6 +150,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            Invoke("LoseScreen", 2f);
         }
     }
 
