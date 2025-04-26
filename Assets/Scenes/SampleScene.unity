@@ -7022,7 +7022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 252}
+  m_AnchoredPosition: {x: 0, y: 141}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305155327
@@ -7045,7 +7045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Left Click on Monster Parts
+  m_text: Create/Place
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c7e40d482f819147a1bb232ce935980, type: 2}
   m_sharedMaterial: {fileID: -706567527121774420, guid: 5c7e40d482f819147a1bb232ce935980, type: 2}
