@@ -25,13 +25,6 @@ public class Card : MonoBehaviour
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "SampleScene")
-        {
-            if (cardWeight > cardMaxWeight)
-            {
-                StartCoroutine(CardLimit());
-            }
-        }
         if (scene.name == "Wheel Room" && this.tag == "Card")
         {
             canvas = GameObject.FindGameObjectWithTag("Canvas");
@@ -77,6 +70,10 @@ public class Card : MonoBehaviour
                 this.cardMaxWeight += bodies.GetComponent<BodyStrength>().Strength;
             }
             addedBody = true;
+        }
+        if (cardWeight > cardMaxWeight)
+        {
+            StartCoroutine(CardLimit());
         }
     }
 
