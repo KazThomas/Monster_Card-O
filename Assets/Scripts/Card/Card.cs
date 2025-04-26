@@ -55,7 +55,7 @@ public class Card : MonoBehaviour
             GameObject[] bits = GameObject.FindGameObjectsWithTag("Part");
             foreach (GameObject b in bits)
             {
-                if (!parts.Contains(b))
+                if (!parts.Contains(b) && b.GetComponent<CardPlacement>().canDrop == true)
                 {
                     cardHealth += b.GetComponent<Card_Creation>().Health;
                     cardAtk += b.GetComponent<Card_Creation>().Atk;
@@ -84,16 +84,15 @@ public class Card : MonoBehaviour
         if (this.tag == "Card") //its going to add multiples of these per time dropped;
         {
             List<GameObject> parts = gm.GetComponent<GameManager>().allParts;
-            GameObject[] bits = GameObject.FindGameObjectsWithTag("Part");
-            foreach (GameObject b in bits)
+            int last = parts.Count - 1;
+
+            GameObject go = parts[last];
+            if (go.tag == "Part")
             {
-                if (parts.Contains(b))
-                {
-                    cardHealth -= b.GetComponent<Card_Creation>().Health;
-                    cardAtk -= b.GetComponent<Card_Creation>().Atk;
-                    cardShield -= b.GetComponent<Card_Creation>().Shield;
-                    cardWeight -= b.GetComponent<Card_Creation>().Cost;
-                }
+                cardHealth -= go.GetComponent<Card_Creation>().Health;
+                cardAtk -= go.GetComponent<Card_Creation>().Atk;
+                cardShield -= go.GetComponent<Card_Creation>().Shield;
+                cardWeight -= go.GetComponent<Card_Creation>().Cost;
             }
         }
     }
