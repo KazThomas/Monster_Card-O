@@ -11,15 +11,18 @@ public class Scroll : MonoBehaviour
     private float rollPos;
     [SerializeField] private float yPos = 3f;
     [SerializeField] private float mouseWheel = 30f;
+    private GameManager gameManager;
     private void Start()
     {
         roll = GetComponent<Scrollbar>();
         rollPos = roll.value;
+        gameManager = GameObject.FindGameObjectWithTag("GameMan").GetComponent<GameManager>();
     }
 
     private void Update()
     {
         ScrollWheel();
+
     }
 
     void ScrollWheel()

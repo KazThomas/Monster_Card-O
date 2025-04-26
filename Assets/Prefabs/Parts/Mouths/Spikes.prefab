@@ -105,9 +105,9 @@ MonoBehaviour:
   Atk: 0
   Shield: 0
   Cost: 2
-  speed: 0.06
-  scalar: 0.4
-  rot: 45
+  speed: 8
+  scalar: 1.5
+  rot: 60
 --- !u!114 &-5359467895794976780
 MonoBehaviour:
   m_ObjectHideFlags: 0

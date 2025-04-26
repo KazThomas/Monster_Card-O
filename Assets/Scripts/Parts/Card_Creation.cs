@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Card_Creation : Part
 {
-    [SerializeField] private float speed = 0.06f;
-    [SerializeField] private float scalar = 0.4f;
+    [SerializeField] private float speed = 40000f;
+    [SerializeField] private float scalar = 1.5f;
     [SerializeField] private float rot = 0.01f;
     private Vector3 mousePos;
     private bool spawn = false;
@@ -36,14 +36,14 @@ public class Card_Creation : Part
         {
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            transform.position = Vector2.Lerp(transform.position, mousePos, speed);
+            transform.position = Vector2.Lerp(transform.position, mousePos, speed * Time.deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.S) && place.hasDropped == false)
+            if (Input.GetKeyDown(KeyCode.E) && place.hasDropped == false)
             {
                 sr.sortingOrder -= 1;
             }
 
-            if (Input.GetKeyDown(KeyCode.W) && place.hasDropped == false)
+            if (Input.GetKeyDown(KeyCode.Q) && place.hasDropped == false)
             {
                 sr.sortingOrder += 1;
             }
@@ -56,19 +56,19 @@ public class Card_Creation : Part
 
     void Transformations()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.localScale -= new Vector3(scalar, scalar, scalar);
+            transform.localScale -= new Vector3(scalar, scalar, scalar) * Time.deltaTime;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.localScale += new Vector3(scalar, scalar, scalar);
+            transform.localScale += new Vector3(scalar, scalar, scalar) * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.eulerAngles += new Vector3(0, 0, rot) * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.eulerAngles -= new Vector3(0, 0, rot) * Time.deltaTime;
         }
