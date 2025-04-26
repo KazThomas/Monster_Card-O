@@ -93,6 +93,12 @@ public class Card : MonoBehaviour
                     cardWeight -= b.GetComponent<Card_Creation>().Cost;
                 }
             }
+            if (addedBody == true)
+            {
+                GameObject body = GameObject.FindGameObjectWithTag("Body");
+                cardMaxWeight -= body.GetComponent<BodyStrength>().Strength;
+            }
+            addedBody = false;
         }
     }
 

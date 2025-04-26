@@ -29,13 +29,17 @@ public class CardPlacement : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (hasDropped == false && canDrop == true)
+        if (canDrop == true)
         {
-            Debug.Log("Dropped");
-            card.GetComponent<Card>().AddValues();
-            card.GetComponent<Card>().UpdateText();
-            gm.allParts.Add(this.gameObject);
+            if (hasDropped == false)
+            {
+                Debug.Log("Dropped");
+                card.GetComponent<Card>().AddValues();
+                card.GetComponent<Card>().UpdateText();
+                gm.allParts.Add(this.gameObject);
+            }
         }
+        
         hasDropped = true;
 
     }

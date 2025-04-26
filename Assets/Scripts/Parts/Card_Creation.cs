@@ -32,7 +32,7 @@ public class Card_Creation : Part
             transform.position = mousePos;
             spawn = true;
         }
-        if (Input.GetMouseButton(0) && place.hasDropped == false)
+        if (place.hasDropped == false)
         {
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -88,11 +88,11 @@ public class Card_Creation : Part
         if (gameObject.tag == "Part" && collision.gameObject.tag == "Bin")
         {
             Destroy(gameObject);
-            Debug.Log(gameObject.name + " Destoryed");
+            Debug.Log(gameObject.name + " Destroyed");
         }
         if (gameObject.tag == "Body" && collision.gameObject.tag == "Bin")
         {
-            GameObject[] icons = GameObject.FindGameObjectsWithTag("Icons");
+            GameObject[] icons = GameObject.FindGameObjectsWithTag("BodyIcons");
             foreach (GameObject icon in icons)
             {
                 icon.GetComponent<DragPart>().created = false;

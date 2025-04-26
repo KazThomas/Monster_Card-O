@@ -20,6 +20,7 @@ public class Undo : MonoBehaviour
             int last = gm.allParts.Count - 1;
 
             GameObject go = gm.allParts[last];
+
             CardPlacement place = go.GetComponent<CardPlacement>();
             place.hasDropped = false;
             go.transform.position = Vector3.zero;
