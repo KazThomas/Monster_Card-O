@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class Card : MonoBehaviour
 {
-    public int cardAtk, cardShield, cardHealth = 0;
+    public int cardAtk, cardShield, cardHealth, cardWeight, cardMaxWeight = 0;
 
-    [SerializeField] private TextMeshProUGUI HealthTxt, AtkTxt, ShieldTxt;
+    [SerializeField] private TextMeshProUGUI HealthTxt, AtkTxt, ShieldTxt, WeightTxt, MaxTxt;
     private GameObject gm;
 
-    GameObject canvas;
+    [SerializeField] GameObject rules;
 
+    GameObject canvas;
+    bool addedBody = false;
     // Update is called once per frame
 
     private void Start()
@@ -23,6 +25,13 @@ public class Card : MonoBehaviour
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "SampleScene")
+        {
+            if (cardWeight > cardMaxWeight)
+            {
+                StartCoroutine(CardLimit());
+            }
+        }
         if (scene.name == "Wheel Room" && this.tag == "Card")
         {
             canvas = GameObject.FindGameObjectWithTag("Canvas");
@@ -34,25 +43,13 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void CardValue()
+    IEnumerator CardLimit()
     {
-        if (this.tag == "Card")
-        {
-            GameObject[] parts = GameObject.FindGameObjectsWithTag("Part");
-            for (int i = 0; i < parts.Length; i++)
-            {
-                cardAtk += parts[i].GetComponent<Card_Creation>().Atk;
-                cardShield += parts[i].GetComponent<Card_Creation>().Shield;
-                cardHealth += parts[i].GetComponent<Card_Creation>().Health;
-            }
-            GameObject bodies = GameObject.FindGameObjectWithTag("Body");
-            if (bodies != null)
-            {
-                cardAtk += bodies.GetComponent<BodyStrength>().Atk;
-                cardShield += bodies.GetComponent<BodyStrength>().Shield;
-                cardHealth += bodies.GetComponent<BodyStrength>().Health;
-            }
-        }
+        rules.SetActive(true);
+        GameObject undoButton = GameObject.Find("Undo");
+        yield return new WaitForSeconds(2.8f);
+        undoButton.GetComponent<Undo>().UndoButton();
+        rules.SetActive(false);
     }
 
     public void AddValues()
@@ -68,20 +65,18 @@ public class Card : MonoBehaviour
                     cardHealth += b.GetComponent<Card_Creation>().Health;
                     cardAtk += b.GetComponent<Card_Creation>().Atk;
                     cardShield += b.GetComponent<Card_Creation>().Shield;
+                    cardWeight += b.GetComponent<Card_Creation>().Cost;
                 }
             }
-            bool addedBody = false;
             GameObject bodies = GameObject.FindGameObjectWithTag("Body");
-            if (bodies != null)
+            if (bodies != null && addedBody == false)
             {
-                if (addedBody == false)
-                {
-                    cardAtk += bodies.GetComponent<BodyStrength>().Atk;
-                    cardShield += bodies.GetComponent<BodyStrength>().Shield;
-                    cardHealth += bodies.GetComponent<BodyStrength>().Health;
-                }
-                addedBody = true;
+                this.cardAtk += bodies.GetComponent<BodyStrength>().Atk;
+                this.cardShield += bodies.GetComponent<BodyStrength>().Shield;
+                this.cardHealth += bodies.GetComponent<BodyStrength>().Health;
+                this.cardMaxWeight += bodies.GetComponent<BodyStrength>().Strength;
             }
+            addedBody = true;
         }
     }
 
@@ -98,6 +93,7 @@ public class Card : MonoBehaviour
                     cardHealth -= b.GetComponent<Card_Creation>().Health;
                     cardAtk -= b.GetComponent<Card_Creation>().Atk;
                     cardShield -= b.GetComponent<Card_Creation>().Shield;
+                    cardWeight -= b.GetComponent<Card_Creation>().Cost;
                 }
             }
         }
@@ -108,6 +104,8 @@ public class Card : MonoBehaviour
         HealthTxt.SetText(cardHealth.ToString());
         AtkTxt.SetText(cardAtk.ToString());
         ShieldTxt.SetText(cardShield.ToString());
+        WeightTxt.SetText(cardWeight.ToString());
+        MaxTxt.SetText(cardMaxWeight.ToString());
     }
 
     public void CardValueEnemy()
@@ -118,15 +116,21 @@ public class Card : MonoBehaviour
             for (int i = 0; i < eparts.Length; i++)
             {
                 cardAtk += eparts[i].GetComponent<Part>().Atk;
+                AtkTxt.SetText(cardAtk.ToString());
                 cardShield += eparts[i].GetComponent<Part>().Shield;
+                ShieldTxt.SetText(cardShield.ToString());
                 cardHealth += eparts[i].GetComponent<Part>().Health;
+                HealthTxt.SetText(cardHealth.ToString());
             }
             GameObject bodies = GameObject.FindGameObjectWithTag("EBody");
             if (bodies != null)
             {
                 cardAtk += bodies.GetComponent<BodyStrength>().Atk;
+                AtkTxt.SetText(cardAtk.ToString());
                 cardShield += bodies.GetComponent<BodyStrength>().Shield;
+                ShieldTxt.SetText(cardShield.ToString());
                 cardHealth += bodies.GetComponent<BodyStrength>().Health;
+                HealthTxt.SetText(cardHealth.ToString());
             }
         }
     }

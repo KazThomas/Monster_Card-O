@@ -76,7 +76,6 @@ public class WheelSpin : MonoBehaviour
 
                 if (speed == 0)
                 {
-                    enemyCard.GetComponent<Card>().CardValueEnemy();
                     ZoneCheck();
                 }
             }

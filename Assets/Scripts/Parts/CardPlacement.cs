@@ -32,11 +32,11 @@ public class CardPlacement : MonoBehaviour
         if (hasDropped == false && canDrop == true)
         {
             Debug.Log("Dropped");
-            hasDropped = true;
             card.GetComponent<Card>().AddValues();
             card.GetComponent<Card>().UpdateText();
             gm.allParts.Add(this.gameObject);
         }
+        hasDropped = true;
 
     }
 
