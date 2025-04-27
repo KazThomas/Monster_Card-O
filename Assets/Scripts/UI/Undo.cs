@@ -18,9 +18,7 @@ public class Undo : MonoBehaviour
         if (gm.allParts.Count > 0)
         {
             int last = gm.allParts.Count - 1;
-
             GameObject go = gm.allParts[last];
-
             CardPlacement place = go.GetComponent<CardPlacement>();
             place.hasDropped = false;
             go.transform.position = Vector3.zero;
@@ -31,9 +29,15 @@ public class Undo : MonoBehaviour
             if (go.tag == "Body")
             {
                 card.GetComponent<Card>().SubtractBody();
+                
             }
             card.GetComponent<Card>().UpdateText();
             gm.allParts.RemoveAt(gm.allParts.Count - 1);
+        }
+        GameObject body = GameObject.FindGameObjectWithTag("Body");
+        if (!gm.allParts.Contains(body))
+        {
+            body.GetComponent<CardPlacement>().hasDropped = false;
         }
 
 

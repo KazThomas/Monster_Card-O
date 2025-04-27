@@ -100,6 +100,13 @@ public class Card : MonoBehaviour
     public void SubtractBody()
     {
         cardMaxWeight = 0;
+        GameObject bodies = GameObject.FindGameObjectWithTag("Body");
+        if (bodies != null && addedBody == true)
+        {
+            this.cardAtk -= bodies.GetComponent<BodyStrength>().Atk;
+            this.cardShield -= bodies.GetComponent<BodyStrength>().Shield;
+            this.cardHealth -= bodies.GetComponent<BodyStrength>().Health;
+        }
         addedBody = false;
     }
 
