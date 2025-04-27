@@ -11,21 +11,11 @@ public class CardPlacement : MonoBehaviour
     public GameManager gm;
     private GameObject gameMan;
     private GameObject card;
-    private Part part;
-    private BodyStrength bodyStrength;
     private void Start()
     {
         gameMan = GameObject.FindGameObjectWithTag("GameMan");
         card = GameObject.FindGameObjectWithTag("Card");
         gm = gameMan.GetComponent<GameManager>();
-        if (this.gameObject.tag == "Part")
-        {
-            part =this.gameObject.GetComponent<Part>();
-        }
-        if (this.gameObject.tag == "Body")
-        {
-            bodyStrength = this.gameObject.GetComponent<BodyStrength>();
-        }
     }
     private void OnMouseUp()
     {
