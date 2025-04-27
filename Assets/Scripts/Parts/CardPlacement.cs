@@ -43,44 +43,4 @@ public class CardPlacement : MonoBehaviour
         hasDropped = true;
 
     }
-
-    public int AddHealth(int health)
-    {
-        if (this.gameObject.tag == "Part")
-        {
-            health += part.Health;
-        }
-        if (this.gameObject.tag == "Body")
-        {
-            health += bodyStrength.Health;
-        }
-        return health;
-    }
-
-    public int AddAtk(int atk)
-    {
-        if (this.gameObject.tag == "Part")
-        {
-            atk += part.Atk;
-        }
-        if (this.gameObject.tag == "Body")
-        {
-            atk += bodyStrength.Atk;
-        }
-        return atk;
-    }
-
-    public int AddShield(int shield)
-    {
-        if (this.gameObject.tag == "Part")
-        {
-            shield += part.Shield;
-        }
-        if (this.gameObject.tag == "Body")
-        {
-            shield += bodyStrength.Shield;
-        }
-        return shield;
-    }
-
 }
