@@ -125,4 +125,9 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    void BackToSetUp()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

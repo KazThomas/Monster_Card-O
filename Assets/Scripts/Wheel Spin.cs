@@ -9,6 +9,7 @@ public class WheelSpin : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxSpeed = 120f;
     [SerializeField] private GameObject hand;
+    [SerializeField] private GameObject tieGo;
     private Vector3 rotZ;
     private bool stop = false;
     [SerializeField] private bool startWatch = false;
@@ -114,6 +115,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
     }
@@ -132,6 +134,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
     }
@@ -150,6 +153,7 @@ public class WheelSpin : MonoBehaviour
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
         {
             Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
     }

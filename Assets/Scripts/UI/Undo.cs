@@ -35,12 +35,9 @@ public class Undo : MonoBehaviour
             gm.allParts.RemoveAt(gm.allParts.Count - 1);
         }
         GameObject body = GameObject.FindGameObjectWithTag("Body");
-        if (!gm.allParts.Contains(body))
+        if (body != null && !gm.allParts.Contains(body))
         {
             body.GetComponent<CardPlacement>().hasDropped = false;
         }
-
-
-        //place.hasDropped = false;
     }
 }
