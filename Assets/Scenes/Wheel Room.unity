@@ -1510,6 +1510,10 @@ PrefabInstance:
       value: Card
       objectReference: {fileID: 0}
     - target: {fileID: 3007780997712900108, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007780997712900108, guid: 778bd14fd72de0843a9029684a343c8c, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
