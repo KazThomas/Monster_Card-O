@@ -113,7 +113,7 @@ public class Card_Creation : Part
             {
                 Debug.Log("NO PLACE");
                 place.canDrop = false;
-                transform.SetParent(null, true);
+                
             }
         }
     }
