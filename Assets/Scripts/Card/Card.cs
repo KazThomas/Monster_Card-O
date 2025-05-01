@@ -79,9 +79,9 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void SubtractValues()
+    public void SubtractValues() //This is purely for Parts
     {
-        if (this.tag == "Card") //its going to add multiples of these per time dropped;
+        if (this.tag == "Card") 
         {
             List<GameObject> parts = gm.GetComponent<GameManager>().allParts;
             int last = parts.Count - 1;

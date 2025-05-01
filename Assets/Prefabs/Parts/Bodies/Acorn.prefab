@@ -107,7 +107,7 @@ MonoBehaviour:
   Cost: 0
   speed: 0.06
   scalar: 0.4
-  rot: 45
+  rot: 60
 --- !u!114 &-6717405645230268735
 MonoBehaviour:
   m_ObjectHideFlags: 0

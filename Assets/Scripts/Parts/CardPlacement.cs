@@ -27,6 +27,7 @@ public class CardPlacement : MonoBehaviour
                 card.GetComponent<Card>().AddValues();
                 card.GetComponent<Card>().UpdateText();
                 gm.allParts.Add(this.gameObject);
+                this.gameObject.layer = 6;
             }
         }
         

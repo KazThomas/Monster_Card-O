@@ -82,7 +82,7 @@ public class Card_Creation : Part
             {
                 Debug.Log("CAN PLACE");
                 place.canDrop = true;
-                transform.parent = collision.transform;
+                
             }
         }
         if (gameObject.tag == "Part" && collision.gameObject.tag == "Bin")
