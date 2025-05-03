@@ -9,7 +9,6 @@ public class Scroll : MonoBehaviour
     [SerializeField] private GameObject icons;
     private Scrollbar roll;
     private float rollPos;
-    [SerializeField] private float yPos = 3f;
     [SerializeField] private float mouseWheel = 30f;
 
     private void Start()
@@ -29,34 +28,14 @@ public class Scroll : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel , 0);
+            rect.GetComponent<RectTransform>().position += new Vector3(0, mouseWheel * Time.deltaTime , 0);
             rollPos = roll.value;
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel, 0);
-            rollPos = roll.value;
-        }
-
-    }
-
-    public void OnMouseDrag()
-    {
-        Debug.Log("test");
-
-        if (roll.value > rollPos)
-        {
-           Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, yPos, 0);
-            rollPos = roll.value;
-        }
-
-        if (roll.value < rollPos)
-        {
-            Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, yPos, 0);
+            rect.GetComponent<RectTransform>().position -= new Vector3(0, mouseWheel * Time.deltaTime, 0);
             rollPos = roll.value;
         }
 
