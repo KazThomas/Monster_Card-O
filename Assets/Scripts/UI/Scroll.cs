@@ -29,14 +29,14 @@ public class Scroll : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel * Time.deltaTime, 0);
+            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel , 0);
             rollPos = roll.value;
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel * Time.deltaTime, 0);
+            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel, 0);
             rollPos = roll.value;
         }
 
@@ -49,14 +49,14 @@ public class Scroll : MonoBehaviour
         if (roll.value > rollPos)
         {
            Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, yPos * Time.deltaTime, 0);
+            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, yPos, 0);
             rollPos = roll.value;
         }
 
         if (roll.value < rollPos)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, yPos * Time.deltaTime, 0);
+            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, yPos, 0);
             rollPos = roll.value;
         }
 

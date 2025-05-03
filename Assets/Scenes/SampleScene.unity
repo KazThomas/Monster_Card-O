@@ -9759,7 +9759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icons: {fileID: 800168842}
   yPos: 6
-  mouseWheel: 75
+  mouseWheel: 40
 --- !u!1 &1847966633
 GameObject:
   m_ObjectHideFlags: 0
