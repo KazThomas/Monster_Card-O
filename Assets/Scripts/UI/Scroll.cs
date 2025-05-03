@@ -11,12 +11,11 @@ public class Scroll : MonoBehaviour
     private float rollPos;
     [SerializeField] private float yPos = 3f;
     [SerializeField] private float mouseWheel = 30f;
-    private GameManager gameManager;
+
     private void Start()
     {
         roll = GetComponent<Scrollbar>();
         rollPos = roll.value;
-        gameManager = GameObject.FindGameObjectWithTag("GameMan").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -27,17 +26,17 @@ public class Scroll : MonoBehaviour
 
     void ScrollWheel()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !Input.GetMouseButton(0))
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel, 0);
+            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, mouseWheel * Time.deltaTime, 0);
             rollPos = roll.value;
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !Input.GetMouseButton(0))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel, 0);
+            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, mouseWheel * Time.deltaTime, 0);
             rollPos = roll.value;
         }
 
@@ -50,14 +49,14 @@ public class Scroll : MonoBehaviour
         if (roll.value > rollPos)
         {
            Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, yPos, 0);
+            rect.GetComponent<RectTransform>().localPosition += new Vector3(0, yPos * Time.deltaTime, 0);
             rollPos = roll.value;
         }
 
         if (roll.value < rollPos)
         {
             Transform rect = icons.GetComponent<RectTransform>();
-            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, yPos, 0);
+            rect.GetComponent<RectTransform>().localPosition -= new Vector3(0, yPos * Time.deltaTime, 0);
             rollPos = roll.value;
         }
 

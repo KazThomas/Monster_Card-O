@@ -4066,8 +4066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -753, y: -45}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -751.7506, y: -45}
+  m_SizeDelta: {x: 102.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &807704918
 GameObject:
@@ -9641,10 +9641,10 @@ RectTransform:
   - {fileID: 1762025945}
   m_Father: {fileID: 1440373642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -883, y: -8}
-  m_SizeDelta: {x: 20, y: 271.47}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -882.99994, y: -8}
+  m_SizeDelta: {x: -1900, y: -808.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832619587
 MonoBehaviour:
@@ -9686,7 +9686,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1040313162}
+  m_TargetGraphic: {fileID: 1832619588}
   m_HandleRect: {fileID: 1040313161}
   m_Direction: 3
   m_Value: 0
@@ -9727,7 +9727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1473109b0f1b8774d9ecdcdd9667960d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66ced208bd1d16a478b15855a6baad16, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9758,8 +9758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: {fileID: 800168842}
-  yPos: 6
-  mouseWheel: 75
+  yPos: 5500
+  mouseWheel: 60000
 --- !u!1 &1847966633
 GameObject:
   m_ObjectHideFlags: 0
