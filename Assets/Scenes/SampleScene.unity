@@ -9758,8 +9758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: {fileID: 800168842}
-  yPos: 5500
-  mouseWheel: 60000
+  yPos: 6
+  mouseWheel: 75
 --- !u!1 &1847966633
 GameObject:
   m_ObjectHideFlags: 0
