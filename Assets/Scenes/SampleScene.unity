@@ -9627,7 +9627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: {fileID: 847613764}
-  mouseWheel: 300
+  mouseWheel: 30
 --- !u!1 &1783575630
 GameObject:
   m_ObjectHideFlags: 0
