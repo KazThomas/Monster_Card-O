@@ -10,6 +10,8 @@ public class WheelSpin : MonoBehaviour
     [SerializeField] private float maxSpeed = 120f;
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject tieGo;
+    [SerializeField] private GameObject loseGo;
+    [SerializeField] private GameObject wonGo;
     private Vector3 rotZ;
     private bool stop = false;
     [SerializeField] private bool startWatch = false;
@@ -106,10 +108,12 @@ public class WheelSpin : MonoBehaviour
         Debug.Log("Atk stat");
         if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent<Card>().cardAtk)
         {
+            wonGo.SetActive(true);
             Invoke("WinScreen", 2f);
         }
         if (enemyCard.GetComponent<Card>().cardAtk > playerCard.GetComponent<Card>().cardAtk)
         {
+            loseGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
         if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
@@ -125,10 +129,12 @@ public class WheelSpin : MonoBehaviour
         Debug.Log("Shield stat");
         if (playerCard.GetComponent<Card>().cardShield > enemyCard.GetComponent<Card>().cardShield)
         {
+            wonGo.SetActive(true);
             Invoke("WinScreen", 2f);
         }
         if (enemyCard.GetComponent<Card>().cardShield > playerCard.GetComponent<Card>().cardShield)
         {
+            loseGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
         if (playerCard.GetComponent<Card>().cardShield == enemyCard.GetComponent<Card>().cardShield)
@@ -144,10 +150,12 @@ public class WheelSpin : MonoBehaviour
         Debug.Log("Health stat");
         if (playerCard.GetComponent<Card>().cardHealth > enemyCard.GetComponent<Card>().cardHealth)
         {
+            wonGo.SetActive(true);
             Invoke("WinScreen", 2f);   
         }
         if (enemyCard.GetComponent<Card>().cardHealth > playerCard.GetComponent<Card>().cardHealth)
         {
+            loseGo.SetActive(true);
             Invoke("LoseScreen", 2f);
         }
         if (playerCard.GetComponent<Card>().cardHealth == enemyCard.GetComponent<Card>().cardHealth)
