@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "SampleScene")
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                BackToSetUp();
+                allParts.Clear();
+                Awards.Clear();
+            }
+        }
         if (scene.name == "SampleScene" && spew != null)
         {
             hasSpawned = false;

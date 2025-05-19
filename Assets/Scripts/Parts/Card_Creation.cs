@@ -13,7 +13,7 @@ public class Card_Creation : Part
 
     private CardPlacement place;
     private SpriteRenderer sr;
-
+    private GameManager gm;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class Card_Creation : Part
         Health = GetComponent<Part>().Health;
         Atk = GetComponent<Part>().Atk;
         Shield = GetComponent<Part>().Shield;
+        gm = GameObject.FindGameObjectWithTag("GameMan").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -51,7 +52,26 @@ public class Card_Creation : Part
             Transformations();
 
         }
-
+        if (place.hasDropped == true && !gm.allParts.Contains(this.gameObject))
+        {
+            if (gameObject.tag == "Part")
+            {
+                Destroy(gameObject);
+                Debug.Log(gameObject.name + " Destroyed");
+            }
+            if (gameObject.tag == "Body")
+            {
+                GameObject[] icons = GameObject.FindGameObjectsWithTag("BodyIcons");
+                foreach (GameObject icon in icons)
+                {
+                    icon.GetComponent<DragPart>().created = false;
+                }
+                transform.position = Vector3.zero;
+                Debug.Log(gameObject.name + " Reset");
+                gameObject.SetActive(false);
+            }
+            place.hasDropped = false;
+        }
     }
 
     void Transformations()

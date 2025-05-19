@@ -26,6 +26,7 @@ TagManager:
   - Spawner
   - Controls
   - BodyIcons
+  - Limit
   layers:
   - Default
   - TransparentFX

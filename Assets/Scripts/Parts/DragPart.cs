@@ -34,4 +34,13 @@ public class DragPart : MonoBehaviour
         created = true;
 
     }
+
+    public void MultiBodies()
+    {
+        if (created == true)
+        {
+            GameObject limit = GameObject.FindGameObjectWithTag("Limit");
+            limit.SetActive(true);
+        }
+    }
 }

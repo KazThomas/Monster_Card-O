@@ -76,15 +76,4 @@ public class EnemySpawner : MonoBehaviour
         }
        
     }
-
-    void Resolutions()
-    {
-        Resolution currentResol;
-
-        currentResol = Screen.currentResolution;
-        int width = currentResol.width;
-        int height = currentResol.height;
-
-
-    }
 }
