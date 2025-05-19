@@ -7,6 +7,26 @@ TagManager:
   - Health
   - Atk
   - Shield
+  - Monster
+  - Part
+  - Card
+  - Body
+  - Icons
+  - test
+  - GameMan
+  - Bin
+  - Canvas
+  - Wheel
+  - text
+  - Enemy
+  - EParts
+  - EBody
+  - ESpawner
+  - Boss
+  - Spawner
+  - Controls
+  - BodyIcons
+  - Limit
   layers:
   - Default
   - TransparentFX
@@ -14,7 +34,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Card
   - 
   - 
   - 

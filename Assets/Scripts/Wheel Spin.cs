@@ -1,34 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WheelSpin : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxSpeed = 120f;
-    [SerializeField] private float increase = 4f;
-    [SerializeField] private float angle;
     [SerializeField] private GameObject hand;
-    private float timer3 = 0f;
+    [SerializeField] private GameObject tieGo;
+    [SerializeField] private GameObject loseGo;
+    [SerializeField] private GameObject wonGo;
     private Vector3 rotZ;
     private bool stop = false;
-    private Rigidbody2D rbody;
-    // Start is called before the first frame update
+    [SerializeField] private bool startWatch = false;
+    private float stopWatch = 0.0f;
+
+    private GameManager gm;
+    GameObject playerCard;
+    GameObject enemyCard;
+    public GameObject boss;
+
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameMan").GetComponent<GameManager>();
+        playerCard = GameObject.FindGameObjectWithTag("Card");
+        enemyCard = GameObject.FindGameObjectWithTag("Enemy");
+        boss = GameObject.FindGameObjectWithTag("Boss");
+    }
 
     private void FixedUpdate()
     {
-        timer3 += Time.deltaTime;
         rotZ  = new Vector3(0,0, speed * Time.deltaTime);
-        if (hand.transform.rotation.z >= -360)
-        {
-            //RESET ROTATION BACK TO 0
-        }
 
-        if ( speed  < maxSpeed)
+        if ( speed  < maxSpeed && !stop)
         {
             speed += Time.deltaTime;
         }
-       // Debug.Log(hand.transform.eulerAngles.z);
 
         if (Input.GetKey(KeyCode.S))
         {
@@ -41,54 +50,129 @@ public class WheelSpin : MonoBehaviour
             ZoneCheck();
 
         }
-         
+
         if (Input.GetKey(KeyCode.Space))
         {
-            BigSpin();
+            startWatch = true;
         }
 
         if (!stop) 
         {
             hand.transform.eulerAngles -= rotZ;
-            angle = hand.transform.eulerAngles.z;
         }
-    }
-
-    void BigSpin()
-    {
-        timer3 = 0;
-        if (timer3 >= 3f && timer3 <= 4f)
+        if (startWatch)
         {
-            speed += increase;
-        }
-
-        if (timer3 > 5f)
-        {
-            speed -= increase;
-            if (speed <= 0f)
+            stopWatch += Time.deltaTime;
+            if (stopWatch <= 3.0f)
             {
-                speed = 0f;
-                rotZ = Vector3.zero;
+                float sUp = Random.Range(5f, 9f);
+                speed += sUp;
+            }
+            if (stopWatch > 3f)
+            {
+                float rand = Random.Range(2f, 5f);
+                speed -= rand;
+                if (speed <= 0)
+                {
+                    speed = 0;
+                }
+
+                if (speed == 0)
+                {
+                    ZoneCheck();
+                }
             }
         }
     }
-
 
     void ZoneCheck()
     {
         if (hand.transform.eulerAngles.z <= 360f && transform.eulerAngles.z > 241f)
         {
-            Debug.Log("Atk stat");
+            Atk();
         }
 
         if (hand.transform.eulerAngles.z <= 241f && hand.transform.eulerAngles.z > 119f)
         {
-            Debug.Log("Shield stat");
+            Shield();
         }
 
         if (hand.transform.eulerAngles.z <= 119f && hand.transform.eulerAngles.z > 0f)
         {
-            Debug.Log("Health stat");
+            Health();
         }
+    }
+
+    void Atk()
+    {
+        Debug.Log("Atk stat");
+        if (playerCard.GetComponent<Card>().cardAtk > enemyCard.GetComponent<Card>().cardAtk)
+        {
+            wonGo.SetActive(true);
+            Invoke("WinScreen", 2f);
+        }
+        if (enemyCard.GetComponent<Card>().cardAtk > playerCard.GetComponent<Card>().cardAtk)
+        {
+            loseGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardAtk == enemyCard.GetComponent<Card>().cardAtk)
+        {
+            Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+    }
+
+    void Shield()
+    {
+        Debug.Log("Shield stat");
+        if (playerCard.GetComponent<Card>().cardShield > enemyCard.GetComponent<Card>().cardShield)
+        {
+            wonGo.SetActive(true);
+            Invoke("WinScreen", 2f);
+        }
+        if (enemyCard.GetComponent<Card>().cardShield > playerCard.GetComponent<Card>().cardShield)
+        {
+            loseGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardShield == enemyCard.GetComponent<Card>().cardShield)
+        {
+            Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+    }
+
+    void Health()
+    {
+        Debug.Log("Health stat");
+        if (playerCard.GetComponent<Card>().cardHealth > enemyCard.GetComponent<Card>().cardHealth)
+        {
+            wonGo.SetActive(true);
+            Invoke("WinScreen", 2f);   
+        }
+        if (enemyCard.GetComponent<Card>().cardHealth > playerCard.GetComponent<Card>().cardHealth)
+        {
+            loseGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+        if (playerCard.GetComponent<Card>().cardHealth == enemyCard.GetComponent<Card>().cardHealth)
+        {
+            Debug.Log("IT'S A TIE!");
+            tieGo.SetActive(true);
+            Invoke("LoseScreen", 2f);
+        }
+    }
+
+    void WinScreen()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+
+    void LoseScreen()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
